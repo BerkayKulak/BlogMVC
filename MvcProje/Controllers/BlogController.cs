@@ -4,20 +4,25 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls.WebParts;
+using BusinessLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
     public class BlogController : Controller
     {
-        // GET: Blog
+        private BlogManager bm = new BlogManager();
         public ActionResult Index()
         {
             return View();
         }
 
+
+
+
         public PartialViewResult BlogList()
         {
-            return PartialView();
+            var bloglist = bm.GetAll();
+            return PartialView(bloglist);
         }
 
         public PartialViewResult FeaturedPosts()
