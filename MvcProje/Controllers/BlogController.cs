@@ -27,6 +27,15 @@ namespace MvcProje.Controllers
 
         public PartialViewResult FeaturedPosts()
         {
+            //1.Post Kategori idisi 1 olan ilk postun başlığını getirir.
+            var posttitle1 = bm.GetAll().OrderByDescending(z=>z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogTitle).FirstOrDefault();
+            var postimage1 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogImage).FirstOrDefault();
+            var blogdate1 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogDate).FirstOrDefault();
+
+            ViewBag.posttitle1 = posttitle1;
+            ViewBag.postimage1 = postimage1;
+            ViewBag.blogdate1 = blogdate1;
+
             return PartialView();
         }
 
