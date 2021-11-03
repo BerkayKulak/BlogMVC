@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+@{ string color = "";}
 <div class="site-section">
     <div class="container">
         <div class="row mb-5">
@@ -9,11 +10,31 @@
         <div class="row">
             @foreach (var x in Model)
             {
+                if (x.Category.CategoryName == "Seyahat")
+                {
+                    color = "post-category text-white bg-secondary mb-3";
+                }
+                if (x.Category.CategoryName == "Teknoloji")
+                {
+                    color = "post-category text-white bg-white mb-3";
+                }
+                if (x.Category.CategoryName == "Yazılım")
+                {
+                    color = "post-category text-white bg-warning mb-3";
+                }
+                if (x.Category.CategoryName == "Spor")
+                {
+                    color = "post-category text-white bg-danger mb-3";
+                }
+                if (x.Category.CategoryName == "Film & Dizi")
+                {
+                    color = "post-category text-white bg-success mb-3";
+                }
                 <div class="col-lg-4 mb-4">
                     <div class="entry2">
-                        <a href="single.html"><img src="@x.BlogImage" alt="Image" class="img-fluid rounded"></a>
+                        <a href="single.html"><img src="@x.BlogImage" alt="Image" style="height: 250px" class="img-fluid rounded"></a>
                         <div class="excerpt">
-                            <span class="post-category text-white bg-secondary mb-3">@x.Category.CategoryName</span>
+                            <span class="@color">@x.Category.CategoryName</span>
 
                             <h2><a href="single.html">@x.BlogTitle</a></h2>
                             <div class="post-meta align-items-center text-left clearfix">
