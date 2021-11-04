@@ -103,9 +103,10 @@ namespace MvcProje.Controllers
             return PartialView(BlogDetailsList);
         }
 
-        public ActionResult BlogByCategory()
+        public ActionResult BlogByCategory(int id)
         {
-            return View();
+            var BlogListByCategory = bm.GetBlogByCategory(id);
+            return View(BlogListByCategory);
         }
     }
 }
