@@ -10,7 +10,9 @@
             <label for="email">Email *</label>
             <input type="email" class="form-control" name="Mail">
         </div>
-      <input name="CommentDate" type="hidden" value="@DateTime.Now.ToShortDateString()"/>
+        <input name="CommentDate" type="hidden" value="@DateTime.Now.ToShortDateString()"/>
+        <input name="BlogID" type="hidden" value="@ViewBag.id"/>
+
         <div class="form-group">
             <label for="message">Yorumunuz</label>
             <textarea name="CommentText" id="message" cols="30" rows="10" class="form-control"></textarea>

@@ -20,8 +20,9 @@ namespace MvcProje.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult LeaveComment()
+        public PartialViewResult LeaveComment(int id)
         {
+            ViewBag.id = id;
             return PartialView();
         }
 
