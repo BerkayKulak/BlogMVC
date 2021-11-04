@@ -27,7 +27,9 @@ namespace MvcProje.Controllers
 
         public PartialViewResult MeetTheTeam()
         {
-            return PartialView();
+            AuthorManager authman = new AuthorManager();
+            var authorlist = authman.GetAll();
+            return PartialView(authorlist);
         }
 
     }
