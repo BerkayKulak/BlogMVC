@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls.WebParts;
 using BusinessLayer.Concrete;
+using EntityLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
     public class CommentController : Controller
     {
-        // GET: Comment
+        
         CommentManager cm = new CommentManager();
         public PartialViewResult CommentList(int id)
         {
@@ -18,8 +19,16 @@ namespace MvcProje.Controllers
             return PartialView(commentlist);
         }
 
+        [HttpGet]
         public PartialViewResult LeaveComment()
         {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public PartialViewResult LeaveComment(Comment c)
+        {
+            cm.CommentAdd(c);
             return PartialView();
         }
 
