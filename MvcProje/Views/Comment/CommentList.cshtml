@@ -11,7 +11,7 @@
             </div>
             <div class="comment-body">
                 <h3>@item.UserName</h3>
-                <div class="meta">January 9, 2018 at 2:21pm</div>
+                <div class="meta"> @(((DateTime)item.CommentDate).ToString("dd-MM-yyyy"))</div>
                 <p>@item.CommentText</p>
             </div>
         </li>
