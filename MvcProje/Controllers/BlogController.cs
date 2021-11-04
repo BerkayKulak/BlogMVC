@@ -85,9 +85,9 @@ namespace MvcProje.Controllers
         }
 
 
-
         public ActionResult BlogDetails()
         {
+
             return View();
         }
 
