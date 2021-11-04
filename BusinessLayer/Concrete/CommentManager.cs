@@ -20,6 +20,8 @@ namespace BusinessLayer.Concrete
          {
              return repocomment.List(x => x.BlogID == id);
          }
+
+         
     }
 }
 
