@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls.WebParts;
+using BusinessLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
@@ -17,7 +18,9 @@ namespace MvcProje.Controllers
 
         public PartialViewResult Footer()
         {
-            return PartialView();
+            AboutManager abm = new AboutManager();
+            var aboutContentList = abm.GetAll();
+            return PartialView(aboutContentList);
         }
 
         public PartialViewResult MeetTheTeam()
