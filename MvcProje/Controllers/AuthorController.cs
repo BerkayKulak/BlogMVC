@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BusinessLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
     public class AuthorController : Controller
     {
         // GET: Author
-        public PartialViewResult AuthorAbout()
+        private BlogManager bm = new BlogManager();
+        public PartialViewResult AuthorAbout(int id)
         {
-            return PartialView();
+            var authordetail = bm.GetBlogById(id);
+            return PartialView(authordetail);
         }
 
         public PartialViewResult AuthorPopularPost()
