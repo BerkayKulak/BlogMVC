@@ -19,8 +19,6 @@ namespace MvcProje.Controllers
         }
 
 
-
-
         public PartialViewResult BlogList(int page = 1)
         {
             var bloglist = bm.GetAll().ToPagedList(page,6);
