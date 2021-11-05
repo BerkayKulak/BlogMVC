@@ -2457,6 +2457,7 @@
     <Content Include="Views\MailSubscribe\AddMail.cshtml" />
     <Content Include="Views\Contact\SendMessage.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Blog\AdminBlogList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
