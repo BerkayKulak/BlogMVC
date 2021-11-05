@@ -38,5 +38,13 @@ namespace BusinessLayer.Concrete
 
             return repoblog.Insert(p);
         }
+
+        public int DeleteBlogBL(int p)
+        {
+            Blog blog = repoblog.Find(x => x.BlogID == p);
+            return repoblog.Delete(blog);
+        }
+
+
     }
 }
