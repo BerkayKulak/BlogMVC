@@ -150,5 +150,12 @@ namespace MvcProje.Controllers
             bm.BlogAddBL(b);
             return RedirectToAction("AdminBlogList");
         }
+
+
+        public ActionResult DeleteBlog(int id)
+        {
+            bm.DeleteBlogBL(id);
+            return RedirectToAction("AdminBlogList");
+        }
     }
 }
