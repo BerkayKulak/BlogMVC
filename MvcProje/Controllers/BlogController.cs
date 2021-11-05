@@ -113,7 +113,8 @@ namespace MvcProje.Controllers
 
         public ActionResult AdminBlogList()
         {
-            return View();
+            var bloglist = bm.GetAll();
+            return View(bloglist);
         }
     }
 }
