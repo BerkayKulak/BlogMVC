@@ -138,7 +138,8 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult AddNewBlog(Blog b)
         {
-            return View();
+            bm.BlogAddBL(b);
+            return RedirectToAction("AdminBlogList");
         }
     }
 }
