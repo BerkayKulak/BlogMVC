@@ -53,5 +53,10 @@ namespace DataAccessLayer.Concrete
         {
             return _object.Where(filter).ToList();
         }
+
+        public T Find(Expression<Func<T, bool>> where)
+        {
+            return _object.FirstOrDefault(where);
+        }
     }
 }
