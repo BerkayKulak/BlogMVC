@@ -10,19 +10,25 @@ namespace MvcProje.Controllers
     public class AuthorController : Controller
     {
         // GET: Author
-        private BlogManager bm = new BlogManager();
+        private BlogManager blogManager = new BlogManager();
+        private AuthorManager authorManager = new AuthorManager();
         public PartialViewResult AuthorAbout(int id)
         {
-            var authordetail = bm.GetBlogById(id);
+            var authordetail = blogManager.GetBlogById(id);
             return PartialView(authordetail);
         }
 
         public PartialViewResult AuthorPopularPost(int id)
         {
-            var blogauthorid = bm.GetAll().Where(x => x.BlogID == id).Select(y => y.AuthorID).FirstOrDefault();
-            var authorblogs = bm.GetBlogByAuthor(blogauthorid);
+            var blogauthorid = blogManager.GetAll().Where(x => x.BlogID == id).Select(y => y.AuthorID).FirstOrDefault();
+            var authorblogs = blogManager.GetBlogByAuthor(blogauthorid);
             return PartialView(authorblogs);
         }
 
+        public ActionResult AuthorList()
+        {
+            var authorList = authorManager.GetAll();
+            return View(authorList);
+        }
     }
 }
