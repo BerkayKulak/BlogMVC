@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls.WebParts;
 using BusinessLayer.Concrete;
+using EntityLayer.Concrete;
 using PagedList;
 using PagedList.Mvc;
 
@@ -115,6 +116,17 @@ namespace MvcProje.Controllers
         {
             var bloglist = bm.GetAll();
             return View(bloglist);
+        }
+
+        [HttpGet]
+        public ActionResult AddNewBlog()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddNewBlog(Blog b)
+        {
+            return View();
         }
     }
 }
