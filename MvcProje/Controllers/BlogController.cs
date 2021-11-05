@@ -159,6 +159,7 @@ namespace MvcProje.Controllers
             return RedirectToAction("AdminBlogList");
         }
 
+        [HttpGet]
         public ActionResult UpdateBlog(int id)
         {
             Blog blog = bm.FindBlog(id);
@@ -181,5 +182,12 @@ namespace MvcProje.Controllers
             ViewBag.values2 = values2;
             return View(blog);
         }
+        [HttpPost]
+        public ActionResult UpdateBlog(Blog p)
+        {
+            bm.UpdateBlog(p);
+            return RedirectToAction("AdminBlogList");
+        }
+
     }
 }
