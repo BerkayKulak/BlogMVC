@@ -132,6 +132,15 @@ namespace MvcProje.Controllers
 
             ViewBag.values = values;
 
+            List<SelectListItem> values2 = (from x in c.Author.ToList()
+                select new SelectListItem
+                {
+                    Text = x.AuthorName,
+                    Value = x.AuthorID.ToString()
+                }).ToList();
+
+            ViewBag.values2 = values2;
+
             return View();
         }
 
