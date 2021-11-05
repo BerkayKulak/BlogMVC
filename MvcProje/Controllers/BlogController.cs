@@ -112,5 +112,10 @@ namespace MvcProje.Controllers
             ViewBag.CategoryDesc = CategoryDesc;
             return View(BlogListByCategory);
         }
+
+        public ActionResult AdminBlogList()
+        {
+            return View();
+        }
     }
 }
