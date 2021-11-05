@@ -15,6 +15,7 @@ namespace MvcProje.Controllers
     public class BlogController : Controller
     {
         private BlogManager bm = new BlogManager();
+        Context c = new Context();
         public ActionResult Index()
         {
             return View();
@@ -122,7 +123,7 @@ namespace MvcProje.Controllers
         [HttpGet]
         public ActionResult AddNewBlog()
         {
-            Context c = new Context();
+ 
             List<SelectListItem> values = (from x in c.Categories.ToList()
                 select new SelectListItem
                 {
@@ -156,6 +157,29 @@ namespace MvcProje.Controllers
         {
             bm.DeleteBlogBL(id);
             return RedirectToAction("AdminBlogList");
+        }
+
+        public ActionResult UpdateBlog(int id)
+        {
+            Blog blog = bm.FindBlog(id);
+            List<SelectListItem> values = (from x in c.Categories.ToList()
+                select new SelectListItem
+                {
+                    Text = x.CategoryName,
+                    Value = x.CategoryID.ToString()
+                }).ToList();
+
+            ViewBag.values = values;
+
+            List<SelectListItem> values2 = (from x in c.Author.ToList()
+                select new SelectListItem
+                {
+                    Text = x.AuthorName,
+                    Value = x.AuthorID.ToString()
+                }).ToList();
+
+            ViewBag.values2 = values2;
+            return View(blog);
         }
     }
 }
