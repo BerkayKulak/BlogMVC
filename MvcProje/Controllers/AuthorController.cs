@@ -44,5 +44,18 @@ namespace MvcProje.Controllers
             authorManager.AddAuthorBL(author);
             return RedirectToAction("AuthorList");
         }
+
+        [HttpGet]
+        public ActionResult AuthorEdit(int id)
+        {
+            Author author = authorManager.FindAuthor(id);
+            return View(author);
+        }
+
+        [HttpPost]
+        public ActionResult AuthorEdit(Author author)
+        {
+            return View();
+        }
     }
 }
