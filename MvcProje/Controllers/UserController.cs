@@ -13,5 +13,11 @@ namespace MvcProje.Controllers
         {
             return View();
         }
+
+        [Authorize]
+        public ActionResult BlogList()
+        {
+            return View();
+        }
     }
 }
