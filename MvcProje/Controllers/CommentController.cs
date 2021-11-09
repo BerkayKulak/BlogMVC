@@ -52,7 +52,11 @@ namespace MvcProje.Controllers
             return RedirectToAction("AdminCommentListTrue");
         }
 
-
+        public ActionResult StatusChangeToTrue(int id)
+        {
+            cm.CommentStatusChangeToTrue(id);
+            return RedirectToAction("AdminCommentListFalse");
+        }
 
     }
 }

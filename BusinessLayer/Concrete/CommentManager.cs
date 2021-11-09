@@ -50,7 +50,12 @@ namespace BusinessLayer.Concrete
              return repocomment.Update(comment);
          }
 
-         
+        public int CommentStatusChangeToTrue(int id)
+        {
+            Comment comment = repocomment.Find(x => x.CommentID == id);
+            comment.CommentStatus = true;
+            return repocomment.Update(comment);
+        }
 
     }
 }
