@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<EntityLayer.Concrete.Comment>
+@{
 
     ViewBag.Title = "AdminCommentList";
 
@@ -23,63 +24,54 @@
                 <div class="card-body">
 
                     <!-- Post -->
+                    @foreach (var item in Model)
+                    {
+                        <div class="post">
 
-                    <div class="post">
+                            <div class="user-block">
 
-                        <div class="user-block">
+                                <img class="img-circle img-bordered-sm" src="/adminLTE-3.0.4/dist/img/user1-128x128.jpg" alt="user image">
 
-                            <img class="img-circle img-bordered-sm" src="/adminLTE-3.0.4/dist/img/user1-128x128.jpg" alt="user image">
+                                <span class="username">
 
-                            <span class="username">
+                                    <a href="#">@item.UserName - @item.Blogs.BlogTitle</a>
 
-                                <a href="#">Jonathan Burke Jr.</a>
+                                    <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
 
-                                <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                    <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
 
-                                <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                </span>
 
-                            </span>
+                                <span class="description">@(((DateTime)item.CommentDate).ToString("dd-MM-yyyy"))</span>
 
-                            <span class="description">Shared publicly - 7:30 PM today</span>
+                            </div>
 
-                        </div>
+                            <!-- /.user-block -->
 
-                        <!-- /.user-block -->
+                            <p>
 
-                        <p>
+                                @item.CommentText
 
-                            Lorem ipsum represents a long-held tradition for designers, typographers and the like. Some people hate it and argue for
+                            </p>
 
-                            its demise, but others ignore the hate as they create awesome
 
-                            tools to help create filler text for everyone from bacon lovers
-
-                            to Charlie Sheen fans.
-
-                        </p>
-
-                        <p>
-
-                            <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-
-                            <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
+                            <br />
 
                             <span class="float-right">
 
                                 <a href="#" class="link-black text-sm">
 
-                                    <i class="far fa-comments mr-1"></i> Comments (5)
+                                    <i class="far fa-comments mr-1"></i> Yorumu Kaldır (5)
 
                                 </a>
 
                             </span>
 
-                        </p>
+                            <br />
 
-                        <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
 
-                    </div>
-
+                        </div>
+                    }
                 </div>
 
             </div>
