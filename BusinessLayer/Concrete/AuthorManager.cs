@@ -32,19 +32,17 @@ namespace BusinessLayer.Concrete
             return repoauthor.Find(x => x.AuthorID == id);
         }
 
-        public int EditAuthor(Author p)
-        {
-            Author author = repoauthor.Find(x => x.AuthorID == p.AuthorID);
-            author.AboutShort = p.AboutShort;
-            author.AuthorName = p.AuthorName;
-            author.AuthorImage = p.AuthorImage;
-            author.AuthorAbout = p.AuthorAbout;
-            author.AuthorTitle = p.AuthorTitle;
-            author.Mail = p.Mail;
-            author.Password = p.Password;
-            author.PhoneNumber = p.PhoneNumber;
-            return repoauthor.Update(author);
-        }
+        //public int UpdateAuthor(Author p)
+        //{
+        //    Author blog = repoauthor.Find(x => x.AuthorID == p.BlogID);
+        //    blog.AuthorTitle = p.AuthorTitle;
+        //    blog.BlogContent = p.BlogContent;
+        //    blog.BlogDate = p.BlogDate;
+        //    blog.BlogImage = p.BlogImage;
+        //    blog.CategoryID = p.CategoryID;
+        //    blog.AuthorID = p.AuthorID;
+        //    return repoblog.Update(blog);
+        //}
 
     }
 }

@@ -55,8 +55,7 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult AuthorEdit(Author author)
         {
-            authorManager.EditAuthor(author);
-            return RedirectToAction("AuthorList");
+            return View();
         }
     }
 }
