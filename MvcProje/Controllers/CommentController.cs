@@ -33,5 +33,11 @@ namespace MvcProje.Controllers
             return PartialView();
         }
 
+        public ActionResult AdminCommentList()
+        {
+            var commentList = cm.CommentList();
+            return View(commentList);
+        }
+
     }
 }
