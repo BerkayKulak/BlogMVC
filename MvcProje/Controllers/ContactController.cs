@@ -37,5 +37,10 @@ namespace MvcProje.Controllers
             var messageList = cm.GetAll();
             return View(messageList);
         }
+
+        public ActionResult MessageDetails()
+        {
+            return View();
+        }
     }
 }
