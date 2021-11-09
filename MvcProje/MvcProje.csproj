@@ -148,6 +148,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\Class2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2474,6 +2475,8 @@
     <Content Include="Views\Contact\SendBox.cshtml" />
     <Content Include="Views\Contact\MessageDetails.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Chart\Chart1.cshtml" />
+    <Content Include="Views\Chart\Chart2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
