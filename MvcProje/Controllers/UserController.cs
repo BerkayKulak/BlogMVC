@@ -13,7 +13,8 @@ namespace MvcProje.Controllers
         private UserProfileManager userProfile = new UserProfileManager();
         public ActionResult Index(string p)
         {
-            p = "berkay@gmail.com";
+            var mail = (string) Session["Mail"];
+            p = mail;
             var profilevalues = userProfile.GetAuthorByMail(p);
             return View(profilevalues);
         }
