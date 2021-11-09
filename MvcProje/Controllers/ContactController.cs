@@ -38,9 +38,11 @@ namespace MvcProje.Controllers
             return View(messageList);
         }
 
-        public ActionResult MessageDetails()
+        public ActionResult MessageDetails(int id)
         {
-            return View();
+            Contact contact = cm.GetContactDetails(id);
+            return View(contact);
         }
+
     }
 }
