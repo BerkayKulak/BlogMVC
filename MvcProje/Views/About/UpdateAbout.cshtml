@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<EntityLayer.Concrete.About>
+@{
 
     ViewBag.Title = "UpdateAbout";
 
@@ -26,7 +27,7 @@
 
                     <div class="card-header">
 
-                        <h3 class="card-title">General</h3>
+                        <h3 class="card-title">Hakkımızda Sayfa Düzenlemesi</h3>
 
                         <div class="card-tools">
 
@@ -41,59 +42,44 @@
                     </div>
 
                     <div class="card-body">
+                        @foreach(var item in Model){
+                            <div class="form-group">
+
+                                <label for="inputName">Görsel 1</label>
+
+                                <input type="text" id="inputName" class="form-control" value="@item.AboutImage1">
+
+                            </div>
+                            <div class="form-group">
+
+                                <label for="inputName">Görsel 2</label>
+
+                                <input type="text" id="inputName" class="form-control" value="@item.AboutImage2">
+
+                            </div>
 
                         <div class="form-group">
 
-                            <label for="inputName">Project Name</label>
+                            <label for="inputDescription">Açıklama 1</label>
 
-                            <input type="text" id="inputName" class="form-control" value="AdminLTE">
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="inputDescription">Project Description</label>
-
-                            <textarea id="inputDescription" class="form-control" rows="4">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</textarea>
+                            <textarea id="inputDescription" class="form-control" rows="4">@item.AboutContent1</textarea>
 
                         </div>
 
-                        <div class="form-group">
+                            <div class="form-group">
 
-                            <label for="inputStatus">Status</label>
+                                <label for="inputDescription">Açıklama 2</label>
 
-                            <select class="form-control custom-select">
+                                <textarea id="inputDescription" class="form-control" rows="4">@item.AboutContent2</textarea>
 
-                                <option selected disabled>Select one</option>
+                            </div>
 
-                                <option>On Hold</option>
+                        
 
-                                <option>Canceled</option>
-
-                                <option selected>Success</option>
-
-                            </select>
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="inputClientCompany">Client Company</label>
-
-                            <input type="text" id="inputClientCompany" class="form-control" value="Deveint Inc">
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="inputProjectLeader">Project Leader</label>
-
-                            <input type="text" id="inputProjectLeader" class="form-control" value="Tony Chicken">
-
-                        </div>
-
+                        
+                        }
                     </div>
-
+                    <a href="#" class="btn btn-success">Güncelle</a>
                     <!-- /.card-body -->
 
                 </div>
