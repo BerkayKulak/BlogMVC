@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BusinessLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
     public class UserController : Controller
     {
         // GET: User
-        public ActionResult Index()
+        private UserProfileManager userProfile = new UserProfileManager();
+        public ActionResult Index(string p)
         {
-            return View();
+            p = "berkay@gmail.com";
+            var profilevalues = userProfile.GetAuthorByMail(p);
+            return View(profilevalues);
         }
 
-        [Authorize]
-        public ActionResult BlogList()
-        {
-            return View();
-        }
     }
 }
