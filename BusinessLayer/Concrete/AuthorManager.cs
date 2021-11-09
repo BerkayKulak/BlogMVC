@@ -16,5 +16,15 @@ namespace BusinessLayer.Concrete
         {
             return repoauthor.List();
         }
+
+        public int AddAuthorBL(Author author)
+        {
+            if (author.AuthorName == "" || author.AboutShort == "" || author.AuthorTitle == "")
+            {
+                return -1;
+            }
+
+            return repoauthor.Insert(author);
+        }
     }
 }
