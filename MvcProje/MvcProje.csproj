@@ -2477,6 +2477,7 @@
     <Content Include="Views\Chart\Index.cshtml" />
     <Content Include="Views\Chart\Chart1.cshtml" />
     <Content Include="Views\Chart\Chart2.cshtml" />
+    <Content Include="Views\Chart\Chart3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
