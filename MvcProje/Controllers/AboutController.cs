@@ -34,7 +34,8 @@ namespace MvcProje.Controllers
 
         public ActionResult UpdateAbout()
         {
-            return View();
+            var aboutList = abm.GetAll();
+            return View(aboutList);
         }
     }
 }
