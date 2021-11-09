@@ -21,6 +21,11 @@ namespace BusinessLayer.Concrete
              return repocomment.List(x => x.BlogID == id);
          }
 
+         public List<Comment> CommentByStatusTrue()
+         {
+             return repocomment.List(x => x.CommentStatus == true);
+         }
+
          public int CommentAdd(Comment c)
          {
              if (c.CommentText.Length <= 4 || c.CommentText.Length >= 301 || c.UserName == "" || c.Mail == "" ||
@@ -31,7 +36,14 @@ namespace BusinessLayer.Concrete
 
              return repocomment.Insert(c);
          }
-         
+
+         public int CommentStatusChangeToFalse(int id)
+         {
+             Comment comment = repocomment.Find(x => x.CommentID == id);
+             comment.CommentStatus = false;
+             return repocomment.Update(comment);
+         }
+
     }
 }
 
