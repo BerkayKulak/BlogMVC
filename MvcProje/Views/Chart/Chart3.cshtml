@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Chart2";
+    ViewBag.Title = "Chart3";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -78,7 +78,7 @@
 
             var columnChartOptions = {
 
-                title: "Blog Derece Sütun Grafiği",
+                title: "Blog Derece Line Grafiği",
 
                 width: 1000,
 
@@ -90,7 +90,7 @@
 
 
 
-            var columnChart = new google.visualization.ColumnChart(document
+            var columnChart = new google.visualization.LineChart(document
 
                 .getElementById('Piechart_div'));
 
@@ -106,11 +106,9 @@
 
 <body>
 
-    <div id="Piechart_div"></div>
+<div id="Piechart_div"></div>
 
 </body>
 
 </html>
-
-
 
