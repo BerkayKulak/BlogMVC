@@ -32,5 +32,9 @@ namespace MvcProje.Controllers
             return PartialView(authorlist);
         }
 
+        public ActionResult UpdateAbout()
+        {
+            return View();
+        }
     }
 }
