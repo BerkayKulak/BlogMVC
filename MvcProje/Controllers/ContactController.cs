@@ -32,5 +32,9 @@ namespace MvcProje.Controllers
             return View();
         }
 
+        public ActionResult SendBox()
+        {
+            return View();
+        }
     }
 }
