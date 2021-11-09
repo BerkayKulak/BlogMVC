@@ -144,6 +144,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MailSubscribeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2478,6 +2479,8 @@
     <Content Include="Views\Chart\Chart1.cshtml" />
     <Content Include="Views\Chart\Chart2.cshtml" />
     <Content Include="Views\Chart\Chart3.cshtml" />
+    <Content Include="Views\Shared\_AuthorLayout.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
