@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls.WebParts;
 using BusinessLayer.Concrete;
+using EntityLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
@@ -32,10 +33,17 @@ namespace MvcProje.Controllers
             return PartialView(authorlist);
         }
 
-        public ActionResult UpdateAbout()
+        [HttpGet]
+        public ActionResult UpdateAboutList()
         {
             var aboutList = abm.GetAll();
             return View(aboutList);
+        }
+        [HttpPost]
+        public ActionResult UpdateAbout(About p)
+        {
+            abm.UpdateAboutBM(p);
+            return RedirectToAction("UpdateAboutList");
         }
     }
 }
