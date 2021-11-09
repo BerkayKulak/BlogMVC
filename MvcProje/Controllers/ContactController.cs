@@ -34,7 +34,8 @@ namespace MvcProje.Controllers
 
         public ActionResult SendBox()
         {
-            return View();
+            var messageList = cm.GetAll();
+            return View(messageList);
         }
     }
 }
