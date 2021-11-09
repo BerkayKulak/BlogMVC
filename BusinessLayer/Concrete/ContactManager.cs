@@ -23,5 +23,10 @@ namespace BusinessLayer.Concrete
              return repocontact.Insert(c);
          }
 
+        public List<Contact> GetAll()
+        {
+            return repocontact.List();
+        }
+
     }
 }
