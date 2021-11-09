@@ -35,8 +35,14 @@ namespace MvcProje.Controllers
 
         public ActionResult AdminCommentListTrue()
         {
-            var commentList = cm.CommentList();
+            var commentList = cm.CommentByStatusTrue();
             return View(commentList);
+        }
+
+        public ActionResult StatusChangeToFalse(int id)
+        {
+            cm.CommentStatusChangeToFalse(id);
+            return RedirectToAction("AdminCommentListTrue");
         }
 
     }
