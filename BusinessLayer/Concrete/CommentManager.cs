@@ -26,6 +26,12 @@ namespace BusinessLayer.Concrete
              return repocomment.List(x => x.CommentStatus == true);
          }
 
+
+         public List<Comment> CommentStatusFalse()
+         {
+             return repocomment.List(x => x.CommentStatus == false);
+         }
+
          public int CommentAdd(Comment c)
          {
              if (c.CommentText.Length <= 4 || c.CommentText.Length >= 301 || c.UserName == "" || c.Mail == "" ||
@@ -43,6 +49,8 @@ namespace BusinessLayer.Concrete
              comment.CommentStatus = false;
              return repocomment.Update(comment);
          }
+
+         
 
     }
 }
