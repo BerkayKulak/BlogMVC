@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BusinessLayer.Concrete;
+using EntityLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
@@ -29,6 +30,19 @@ namespace MvcProje.Controllers
         {
             var authorList = authorManager.GetAll();
             return View(authorList);
+        }
+
+        [HttpGet]
+        public ActionResult AddAuthor()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddAuthor(Author author)
+        {
+            authorManager.AddAuthorBL(author);
+            return RedirectToAction("AuthorList");
         }
     }
 }
