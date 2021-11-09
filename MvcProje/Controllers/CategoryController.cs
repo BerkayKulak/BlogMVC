@@ -26,7 +26,8 @@ namespace MvcProje.Controllers
 
         public ActionResult AdminCategoryList()
         {
-            return View();
+            var categorylist = cm.GetAll();
+            return View(categorylist);
         }
     }
 }

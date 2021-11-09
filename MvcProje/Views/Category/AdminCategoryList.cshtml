@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<EntityLayer.Concrete.Category>
+@{
 
     ViewBag.Title = "AdminCategoryList";
 
@@ -28,7 +29,7 @@
 
             <div class="card-header">
 
-                <h3 class="card-title">Projects</h3>
+                <h3 class="card-title">Kategori Listesi</h3>
 
                 <div class="card-tools">
 
@@ -58,36 +59,35 @@
 
                             <th style="width: 1%">
 
-                                #
+                                ID
 
                             </th>
 
                             <th style="width: 20%">
-
-                                Project Name
+                                Kategori Adı
 
                             </th>
 
                             <th style="width: 30%">
 
-                                Team Members
+                                Son Blog
 
                             </th>
 
                             <th>
 
-                                Project Progress
+                                Kategori Bar
 
                             </th>
 
                             <th style="width: 8%" class="text-center">
 
-                                Status
+                                Durum
 
                             </th>
 
                             <th style="width: 20%">
-
+                                İşlemler
                             </th>
 
                         </tr>
@@ -96,118 +96,107 @@
 
                     <tbody>
 
-                        <tr>
+                        @foreach(var item in Model){
+                    <tr>
 
-                            <td>
+                        <td>
 
-                                #
+                            @item.CategoryID
 
-                            </td>
+                        </td>
 
-                            <td>
+                        <td>
 
-                                <a>
+                         @item.CategoryName
 
-                                    AdminLTE v3
+                        </td>
 
-                                </a>
+                        <td>
 
-                                <br />
+                            <ul class="list-inline">
 
-                                <small>
+                                <li class="list-inline-item">
 
-                                    Created 01.01.2019
+                                    <img alt="Avatar" class="table-avatar" src="/AdminLTE-3.0.4/dist/img/avatar.png">
 
-                                </small>
+                                </li>
 
-                            </td>
+                                <li class="list-inline-item">
 
-                            <td>
+                                    <img alt="Avatar" class="table-avatar" src="/AdminLTE-3.0.4/dist/img/avatar2.png">
 
-                                <ul class="list-inline">
+                                </li>
 
-                                    <li class="list-inline-item">
+                                <li class="list-inline-item">
 
-                                        <img alt="Avatar" class="table-avatar" src="/AdminLTE-3.0.4/dist/img/avatar.png">
+                                    <img alt="Avatar" class="table-avatar" src="/AdminLTE-3.0.4/dist/img/avatar3.png">
 
-                                    </li>
+                                </li>
 
-                                    <li class="list-inline-item">
+                            </ul>
 
-                                        <img alt="Avatar" class="table-avatar" src="/AdminLTE-3.0.4/dist/img/avatar2.png">
+                        </td>
 
-                                    </li>
+                        <td class="project_progress">
 
-                                    <li class="list-inline-item">
+                            <div class="progress progress-sm">
 
-                                        <img alt="Avatar" class="table-avatar" src="/AdminLTE-3.0.4/dist/img/avatar3.png">
-
-                                    </li>
-
-                                </ul>
-
-                            </td>
-
-                            <td class="project_progress">
-
-                                <div class="progress progress-sm">
-
-                                    <div class="progress-bar bg-green" role="progressbar" aria-volumenow="57" aria-volumemin="0" aria-volumemax="100" style="width: 57%">
-
-                                    </div>
+                                <div class="progress-bar bg-green" role="progressbar" aria-volumenow="57" aria-volumemin="0" aria-volumemax="100" style="width: 57%">
 
                                 </div>
 
-                                <small>
+                            </div>
 
-                                    57% Complete
+                            <small>
 
-                                </small>
+                                57% Complete
 
-                            </td>
+                            </small>
 
-                            <td class="project-state">
+                        </td>
 
-                                <span class="badge badge-success">Success</span>
+                        <td class="project-state">
 
-                            </td>
+                            <span class="badge badge-success">Success</span>
 
-                            <td class="project-actions text-right">
+                        </td>
 
-                                <a class="btn btn-primary btn-sm" href="#">
+                        <td class="project-actions text-right">
 
-                                    <i class="fas fa-folder">
+                            <a class="btn btn-primary btn-sm" href="#">
 
-                                    </i>
+                                <i class="fas fa-folder">
 
-                                    View
+                                </i>
 
-                                </a>
+                                Yazılar
 
-                                <a class="btn btn-info btn-sm" href="#">
+                            </a>
 
-                                    <i class="fas fa-pencil-alt">
+                            <a class="btn btn-info btn-sm" href="#">
 
-                                    </i>
+                                <i class="fas fa-pencil-alt">
 
-                                    Edit
+                                </i>
 
-                                </a>
+                                Düzenle
 
-                                <a class="btn btn-danger btn-sm" href="#">
+                            </a>
 
-                                    <i class="fas fa-trash">
+                            <a class="btn btn-danger btn-sm" href="#">
 
-                                    </i>
+                                <i class="fas fa-trash">
 
-                                    Delete
+                                </i>
 
-                                </a>
+                                Sil
 
-                            </td>
+                            </a>
 
-                        </tr>
+                        </td>
 
+                    </tr>
+                        }
                     </tbody>
 
                 </table>
