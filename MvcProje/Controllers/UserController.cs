@@ -27,6 +27,12 @@ namespace MvcProje.Controllers
             return PartialView(profilevalues);
         }
 
+        public ActionResult UpdateUserProfile(Author p)
+        {
+            userProfile.EditAuthor(p);
+            return RedirectToAction("Index");
+        }
+
         public ActionResult BlogList(string p)
         {
             p = (string)Session["Mail"];
