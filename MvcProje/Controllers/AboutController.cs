@@ -4,26 +4,46 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls.WebParts;
+using BusinessLayer.Concrete;
+using EntityLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
     public class AboutController : Controller
     {
         // GET: About
+        AboutManager abm = new AboutManager();
         public ActionResult Index()
         {
-            return View();
+            var aboutcontent = abm.GetAll();
+            return View(aboutcontent);
         }
 
         public PartialViewResult Footer()
         {
-            return PartialView();
+            
+            var aboutContentList = abm.GetAll();
+            return PartialView(aboutContentList);
         }
 
         public PartialViewResult MeetTheTeam()
         {
-            return PartialView();
+            AuthorManager authman = new AuthorManager();
+            var authorlist = authman.GetAll();
+            return PartialView(authorlist);
         }
 
+        [HttpGet]
+        public ActionResult UpdateAboutList()
+        {
+            var aboutList = abm.GetAll();
+            return View(aboutList);
+        }
+        [HttpPost]
+        public ActionResult UpdateAbout(About p)
+        {
+            abm.UpdateAboutBM(p);
+            return RedirectToAction("UpdateAboutList");
+        }
     }
 }

@@ -3,20 +3,62 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BusinessLayer.Concrete;
+using EntityLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
     public class AuthorController : Controller
     {
         // GET: Author
-        public PartialViewResult AuthorAbout()
+        private BlogManager blogManager = new BlogManager();
+        private AuthorManager authorManager = new AuthorManager();
+        public PartialViewResult AuthorAbout(int id)
         {
-            return PartialView();
+            var authordetail = blogManager.GetBlogById(id);
+            return PartialView(authordetail);
         }
 
-        public PartialViewResult AuthorPopularPost()
+        public PartialViewResult AuthorPopularPost(int id)
         {
-            return PartialView();
+            var blogauthorid = blogManager.GetAll().Where(x => x.BlogID == id).Select(y => y.AuthorID).FirstOrDefault();
+            var authorblogs = blogManager.GetBlogByAuthor(blogauthorid);
+            return PartialView(authorblogs);
         }
+
+        public ActionResult AuthorList()
+        {
+            var authorList = authorManager.GetAll();
+            return View(authorList);
+        }
+
+        [HttpGet]
+        public ActionResult AddAuthor()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddAuthor(Author author)
+        {
+            authorManager.AddAuthorBL(author);
+            return RedirectToAction("AuthorList");
+        }
+
+        [HttpGet]
+        public ActionResult AuthorEdit(int id)
+        {
+            Author author = authorManager.FindAuthor(id);
+            return View(author);
+        }
+
+        [HttpPost]
+        public ActionResult AuthorEdit(Author author)
+        {
+            authorManager.EditAuthor(author);
+            return RedirectToAction("AuthorList");
+        }
+
+
     }
 }

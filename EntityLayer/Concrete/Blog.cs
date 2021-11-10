@@ -20,10 +20,13 @@ namespace EntityLayer.Concrete
 
         public DateTime BlogDate { get; set; }
         public string BlogContent { get; set; }
+
+        public int BlogRating { get; set; }
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
         public int AuthorID { get; set; }
         public virtual Author Author { get; set; }
         public ICollection<Comment> Comments { get; set; }
+
     }
 }

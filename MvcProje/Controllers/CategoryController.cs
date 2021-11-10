@@ -20,7 +20,14 @@ namespace MvcProje.Controllers
 
         public PartialViewResult BlogDetailsCategoryList()
         {
-            return PartialView();
+            var categoryvalues = cm.GetAll();
+            return PartialView(categoryvalues);
+        }
+
+        public ActionResult AdminCategoryList()
+        {
+            var categorylist = cm.GetAll();
+            return View(categorylist);
         }
     }
 }
