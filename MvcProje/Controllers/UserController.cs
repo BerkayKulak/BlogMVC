@@ -24,5 +24,12 @@ namespace MvcProje.Controllers
             return PartialView(profilevalues);
         }
 
+        public ActionResult BlogList()
+        {
+            int id = 2;
+            var blogs = userProfile.GetBlogByAuthor(id);
+            return View(blogs);
+        }
+
     }
 }
