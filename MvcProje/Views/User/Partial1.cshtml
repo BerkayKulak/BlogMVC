@@ -3,7 +3,7 @@
 <div class="tab-pane" id="settings">
     @using (Html.BeginForm("UpdateUserProfile", "User", FormMethod.Post))
     {
-        @foreach (var item in Model)
+        foreach (var item in Model)
         {
             <form class="form-horizontal">
                 <div class="form-group row">
