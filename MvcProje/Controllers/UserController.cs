@@ -67,5 +67,37 @@ namespace MvcProje.Controllers
             return RedirectToAction("BlogList");
         }
 
+        [HttpGet]
+        public ActionResult AddNewBlog()
+        {
+
+            List<SelectListItem> values = (from x in c.Categories.ToList()
+                select new SelectListItem
+                {
+                    Text = x.CategoryName,
+                    Value = x.CategoryID.ToString()
+                }).ToList();
+
+            ViewBag.values = values;
+
+            List<SelectListItem> values2 = (from x in c.Author.ToList()
+                select new SelectListItem
+                {
+                    Text = x.AuthorName,
+                    Value = x.AuthorID.ToString()
+                }).ToList();
+
+            ViewBag.values2 = values2;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddNewBlog(Blog b)
+        {
+            bm.BlogAddBL(b);
+            return RedirectToAction("BlogList");
+        }
+
     }
 }
