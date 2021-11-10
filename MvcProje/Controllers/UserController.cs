@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
@@ -18,10 +19,18 @@ namespace MvcProje.Controllers
 
         public PartialViewResult Partial1(string p)
         {
-            var mail = (string)Session["Mail"];
-            p = mail;
+            p = (string)Session["Mail"];
             var profilevalues = userProfile.GetAuthorByMail(p);
             return PartialView(profilevalues);
+        }
+
+        public ActionResult BlogList(string p)
+        {
+            p = (string)Session["Mail"];
+            Context c = new Context();
+            int id = c.Author.Where(x => x.Mail == p).Select(y=>y.AuthorID).FirstOrDefault();
+            var blogs = userProfile.GetBlogByAuthor(id);
+            return View(blogs);
         }
 
     }
