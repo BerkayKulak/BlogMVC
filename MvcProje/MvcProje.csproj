@@ -2495,6 +2495,7 @@
     <Content Include="Views\Shared\_AuthorLayout.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Login\AuthorLogin.cshtml" />
+    <Content Include="Views\User\Partial1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
