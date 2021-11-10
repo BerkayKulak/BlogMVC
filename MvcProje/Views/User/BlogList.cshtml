@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_AuthorLayout.cshtml";
 }
 
-
+@{ string color = "";}
 <!DOCTYPE html>
 
 <html>
@@ -77,7 +77,7 @@
 
                             </th>
 
-                            
+
 
                         </tr>
 
@@ -87,6 +87,22 @@
 
                         @foreach (var item in Model)
                         {
+                            if (item.BlogRating >= 85)
+                            {
+                                color = "bg-success";
+                            }
+                            if (item.BlogRating >= 70 && item.BlogRating <= 84)
+                            {
+                                color = "bg-info";
+                            }
+                            if (item.BlogRating >= 50 && item.BlogRating <= 69)
+                            {
+                                color = "bg-warning";
+                            }
+                            if (item.BlogRating >= 0 && item.BlogRating <= 49)
+                            {
+                                color = "bg-danger";
+                            }
                             <tr>
 
                                 <td>
@@ -101,13 +117,13 @@
 
                                 </td>
 
-                                
+
 
                                 <td class="project_progress">
 
                                     <div class="progress progress-sm">
 
-                                        <div class="progress-bar bg-green" role="progressbar" aria-volumenow="@item.BlogRating" aria-volumemin="0" aria-volumemax="10" style="width: @item.BlogRating%">
+                                        <div class="progress-bar @color" role="progressbar" aria-volumenow="@item.BlogRating" aria-volumemin="0" aria-volumemax="10" style="width: @item.BlogRating%">
 
                                         </div>
 
@@ -115,7 +131,7 @@
 
                                     <small>
 
-                                      Aldığı Puan:   @item.BlogRating%
+                                        Aldığı Puan:   @item.BlogRating%
 
                                     </small>
 
@@ -123,13 +139,13 @@
 
                                 <td class="project-state">
 
-                                    <span class="badge badge-success">Success</span>
+                                    <span class="badge badge-@color">Success</span>
 
                                 </td>
 
                                 <td class="project-actions text-right">
 
-                                  
+
                                     <a class="btn btn-info btn-sm" href="#">
 
                                         <i class="fas fa-pencil-alt">
