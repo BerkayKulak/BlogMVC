@@ -11,11 +11,17 @@ namespace MvcProje.Controllers
     {
         // GET: User
         private UserProfileManager userProfile = new UserProfileManager();
-        public ActionResult Index(string p)
+        public ActionResult Index()
         {
-            p = "berkay@gmail.com";
+            return View();
+        }
+
+        public PartialViewResult Partial1(string p)
+        {
+            var mail = (string)Session["Mail"];
+            p = mail;
             var profilevalues = userProfile.GetAuthorByMail(p);
-            return View(profilevalues);
+            return PartialView(profilevalues);
         }
 
     }
