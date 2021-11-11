@@ -42,5 +42,22 @@ namespace MvcProje.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult AdminLogin(Admin p)
+        {
+
+            var admininfo = c.Admins.FirstOrDefault(x => x.UserName == p.UserName && x.Password == p.Password);
+            if (admininfo != null)
+            {
+                FormsAuthentication.SetAuthCookie(admininfo.UserName, false);
+                Session["Mail"] = admininfo.UserName.ToString();
+                return RedirectToAction("AdminBlogList", "Blog");
+            }
+            else
+            {
+                return RedirectToAction("AdminLogin", "Login");
+            }
+        }
+
     }
 }
