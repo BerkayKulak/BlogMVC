@@ -34,10 +34,12 @@ namespace MvcProje.Controllers
             var posttitle1 = bm.GetAll().OrderByDescending(z=>z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogTitle).FirstOrDefault();
             var postimage1 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogImage).FirstOrDefault();
             var blogdate1 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogDate).FirstOrDefault();
+            var blogpostid1 = bm.GetAll().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogID).FirstOrDefault();
 
             ViewBag.posttitle1 = posttitle1;
             ViewBag.postimage1 = postimage1;
             ViewBag.blogdate1 = blogdate1;
+            ViewBag.blogpostid1 = blogpostid1;
 
 
             //2.Post Kategori idisi 1 olan ilk postun başlığını getirir.
