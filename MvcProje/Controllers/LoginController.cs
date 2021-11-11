@@ -13,6 +13,7 @@ namespace MvcProje.Controllers
     {
         // GET: Login
         Context c = new Context();
+        [HttpGet]
         public ActionResult AuthorLogin()
         {
             return View();
@@ -34,5 +35,12 @@ namespace MvcProje.Controllers
                 return RedirectToAction("AuthorLogin", "Login");
             }
         }
+
+        [HttpGet]
+        public ActionResult AdminLogin()
+        {
+            return View();
+        }
+
     }
 }
