@@ -16,18 +16,19 @@ namespace MvcProje.Controllers
     {
         private BlogManager bm = new BlogManager();
         Context c = new Context();
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
 
-
+        [AllowAnonymous]
         public PartialViewResult BlogList(int page = 1)
         {
             var bloglist = bm.GetAll().ToPagedList(page,6);
             return PartialView(bloglist);
         }
-
+        [AllowAnonymous]
         public PartialViewResult FeaturedPosts()
         {
             //1.Post Kategori idisi 1 olan ilk postun başlığını getirir.
@@ -85,31 +86,32 @@ namespace MvcProje.Controllers
 
             return PartialView();
         }
-
+        [AllowAnonymous]
         public PartialViewResult OtherFeaturedPosts()
         {
             return PartialView();
         }
 
-
+        [AllowAnonymous]
         public ActionResult BlogDetails()
         {
 
             return View();
         }
 
+        [AllowAnonymous]
         public PartialViewResult BlogCover(int id)
         {
             var BlogDetailsList = bm.GetBlogById(id);
             return PartialView(BlogDetailsList);
         }
-
+        [AllowAnonymous]
         public PartialViewResult BlogReadAll(int id)
         {
             var BlogDetailsList = bm.GetBlogById(id);
             return PartialView(BlogDetailsList);
         }
-
+        [AllowAnonymous]
         public ActionResult BlogByCategory(int id)
         {
             var BlogListByCategory = bm.GetBlogByCategory(id);
@@ -120,7 +122,7 @@ namespace MvcProje.Controllers
             return View(BlogListByCategory);
         }
 
-        [Authorize]
+        [AllowAnonymous]
         public ActionResult AdminBlogList()
         {
             var bloglist = bm.GetAll();

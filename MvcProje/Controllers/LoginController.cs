@@ -9,6 +9,7 @@ using EntityLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login
