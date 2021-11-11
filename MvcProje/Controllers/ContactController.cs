@@ -12,6 +12,7 @@ namespace MvcProje.Controllers
     {
         // GET: Contact
         private ContactManager cm = new ContactManager();
+        [AllowAnonymous]
         public ActionResult Index()
         {
 
@@ -19,6 +20,7 @@ namespace MvcProje.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult SendMessage()
         {
 
@@ -26,6 +28,7 @@ namespace MvcProje.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult SendMessage(Contact p)
         {
             cm.BLContactAdd(p);

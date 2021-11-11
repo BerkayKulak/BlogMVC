@@ -13,6 +13,7 @@ namespace MvcProje.Controllers
     {
         
         CommentManager cm = new CommentManager();
+        [AllowAnonymous]
         public PartialViewResult CommentList(int id)
         {
             var commentlist = cm.CommentByBlog(id);
@@ -20,6 +21,7 @@ namespace MvcProje.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public PartialViewResult LeaveComment(int id)
         {
             ViewBag.id = id;
@@ -27,6 +29,7 @@ namespace MvcProje.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public PartialViewResult LeaveComment(Comment c)
         {
             cm.CommentAdd(c);
