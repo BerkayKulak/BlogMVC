@@ -120,6 +120,7 @@ namespace MvcProje.Controllers
             return View(BlogListByCategory);
         }
 
+        [Authorize]
         public ActionResult AdminBlogList()
         {
             var bloglist = bm.GetAll();
