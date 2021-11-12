@@ -21,25 +21,6 @@ namespace BusinessLayer.Concrete
         }
 
 
-        public Author FindAuthor(int id)
-        {
-            return repoauthor.Find(x => x.AuthorID == id);
-        }
-
-        public void EditAuthor(Author p)
-        {
-            Author author = repoauthor.Find(x => x.AuthorID == p.AuthorID);
-            author.AboutShort = p.AboutShort;
-            author.AuthorName = p.AuthorName;
-            author.AuthorImage = p.AuthorImage;
-            author.AuthorAbout = p.AuthorAbout;
-            author.AuthorTitle = p.AuthorTitle;
-            author.Mail = p.Mail;
-            author.Password = p.Password;
-            author.PhoneNumber = p.PhoneNumber;
-            repoauthor.Update(author);
-        }
-
         public List<Author> GetList()
         {
             return _authorDal.List();
@@ -52,7 +33,7 @@ namespace BusinessLayer.Concrete
 
         public Author GetByID(int id)
         {
-            throw new NotImplementedException();
+            return _authorDal.GetByID(id);
         }
 
         public void AuthorDelete(Author author)
@@ -62,7 +43,7 @@ namespace BusinessLayer.Concrete
 
         public void AuthorUpdate(Author author)
         {
-            throw new NotImplementedException();
+            _authorDal.Update(author);
         }
     }
 }
