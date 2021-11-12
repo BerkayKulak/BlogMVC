@@ -172,14 +172,15 @@ namespace MvcProje.Controllers
 
         public ActionResult DeleteBlog(int id)
         {
-            bm.DeleteBlogBL(id);
+            Blog blog = bm.GetByID(id);
+            bm.BlogDelete(blog);
             return RedirectToAction("AdminBlogList");
         }
 
         [HttpGet]
         public ActionResult UpdateBlog(int id)
         {
-            Blog blog = bm.FindBlog(id);
+            Blog blog = bm.GetByID(id);
             List<SelectListItem> values = (from x in c.Categories.ToList()
                 select new SelectListItem
                 {
@@ -202,7 +203,7 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult UpdateBlog(Blog p)
         {
-            bm.UpdateBlog(p);
+            bm.BlogUpdate(p);
             return RedirectToAction("AdminBlogList");
         }
 
