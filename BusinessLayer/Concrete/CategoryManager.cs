@@ -35,18 +35,18 @@ namespace BusinessLayer.Concrete
         }
 
 
-        public int DeleteCategoryBL(int id)
+        public void DeleteCategoryBL(int id)
         {
             Category category = repoCategory.Find(x => x.CategoryID == id);
-            category.CategoryStatus = false;
-            return repoCategory.Update(category);
+            category.CategoryStatus = false; 
+            repoCategory.Update(category);
         }
 
         public void CategoryStatusTrueBL(int id)
         {
             Category category = repoCategory.Find(x => x.CategoryID == id);
             category.CategoryStatus = true;
-             repoCategory.Update(category);
+            repoCategory.Update(category);
         }
 
         public List<Category> GetList()

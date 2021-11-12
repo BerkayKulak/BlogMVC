@@ -23,7 +23,7 @@ namespace BusinessLayer.Concrete
         }
 
 
-        public int EditAuthor(Author p)
+        public void EditAuthor(Author p)
         {
             Author author = repouser.Find(x => x.AuthorID == p.AuthorID);
             author.AboutShort = p.AboutShort;
@@ -34,7 +34,7 @@ namespace BusinessLayer.Concrete
             author.Mail = p.Mail;
             author.Password = p.Password;
             author.PhoneNumber = p.PhoneNumber;
-            return repouser.Update(author);
+             repouser.Update(author);
         }
 
     }
