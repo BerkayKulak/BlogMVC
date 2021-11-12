@@ -16,11 +16,13 @@ namespace MvcProje.Controllers
     {
         
         private CategoryManager cm = new CategoryManager(new EfCategoryDal());
+
         public ActionResult Index()
         {
             var categoryvalues = cm.GetAll();
             return View(categoryvalues);
         }
+
         [AllowAnonymous]
         public PartialViewResult BlogDetailsCategoryList()
         {
@@ -65,7 +67,7 @@ namespace MvcProje.Controllers
         public ActionResult CategoryEdit(int id)
         {
 
-            Category category = cm.FindCategory(id);
+            Category category = cm.GetByID(id);
             return View(category);
         }
 
