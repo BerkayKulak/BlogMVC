@@ -40,28 +40,8 @@ namespace BusinessLayer.Concrete
              repoblog.Insert(p);
         }
 
-        public void DeleteBlogBL(int p)
-        {
-            Blog blog = repoblog.Find(x => x.BlogID == p);
-             repoblog.Delete(blog);
-        }
 
-        public Blog FindBlog(int id)
-        {
-            return repoblog.Find(x => x.BlogID == id);
-        }
-
-        public void UpdateBlog(Blog p)
-        {
-            Blog blog = repoblog.Find(x => x.BlogID == p.BlogID);
-            blog.BlogTitle = p.BlogTitle;
-            blog.BlogContent = p.BlogContent;
-            blog.BlogDate = p.BlogDate;
-            blog.BlogImage = p.BlogImage;
-            blog.CategoryID = p.CategoryID;
-            blog.AuthorID = p.AuthorID;
-             repoblog.Update(blog);
-        }
+      
 
         public List<Blog> GetList()
         {
@@ -75,17 +55,17 @@ namespace BusinessLayer.Concrete
 
         public Blog GetByID(int id)
         {
-            throw new System.NotImplementedException();
+            return _blogDal.GetByID(id);
         }
 
         public void BlogDelete(Blog blog)
         {
-            throw new System.NotImplementedException();
+            _blogDal.Delete(blog);
         }
 
         public void BlogUpdate(Blog blog)
         {
-            throw new System.NotImplementedException();
+            _blogDal.Update(blog);
         }
     }
 }
