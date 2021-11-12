@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls.WebParts;
 using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 
 namespace MvcProje.Controllers
@@ -29,8 +30,8 @@ namespace MvcProje.Controllers
 
         public PartialViewResult MeetTheTeam()
         {
-            AuthorManager authman = new AuthorManager();
-            var authorlist = authman.GetAll();
+            AuthorManager authman = new AuthorManager(new EfAuthorDal());
+            var authorlist = authman.GetList();
             return PartialView(authorlist);
         }
 
