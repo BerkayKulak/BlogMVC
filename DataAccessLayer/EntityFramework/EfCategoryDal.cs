@@ -9,7 +9,7 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class CategoryDal:Repository<Category>,ICategoryDal
+    public class EfCategoryDal:Repository<Category>,ICategoryDal
     {
 
     }
