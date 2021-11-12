@@ -27,14 +27,6 @@ namespace BusinessLayer.Concrete
             return repoCategory.List();
         }
 
-
-
-        public Category FindCategory(int id)
-        {
-            return repoCategory.Find(x => x.CategoryID == id);
-        }
-
-
         public void DeleteCategoryBL(int id)
         {
             Category category = repoCategory.Find(x => x.CategoryID == id);
