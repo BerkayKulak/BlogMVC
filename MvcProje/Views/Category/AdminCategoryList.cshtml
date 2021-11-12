@@ -96,106 +96,99 @@
 
                     <tbody>
 
-                        @foreach(var item in Model){
-                    <tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
 
-                        <td>
+                                <td>
 
-                            @item.CategoryID
+                                    @item.CategoryID
 
-                        </td>
+                                </td>
 
-                        <td>
+                                <td>
 
-                         @item.CategoryName
+                                    @item.CategoryName
 
-                        </td>
+                                </td>
 
-                        <td>
+                                <td>
 
-                            <ul class="list-inline">
+                                    <ul class="list-inline">
 
-                                <li class="list-inline-item">
+                                        <li class="list-inline-item">
 
-                                    <img alt="Avatar" class="table-avatar" src="/AdminLTE-3.0.4/dist/img/avatar.png">
+                                            <img alt="Avatar" class="table-avatar" src="/AdminLTE-3.0.4/dist/img/avatar.png">
 
-                                </li>
+                                        </li>
 
-                                <li class="list-inline-item">
+                                        <li class="list-inline-item">
 
-                                    <img alt="Avatar" class="table-avatar" src="/AdminLTE-3.0.4/dist/img/avatar2.png">
+                                            <img alt="Avatar" class="table-avatar" src="/AdminLTE-3.0.4/dist/img/avatar2.png">
 
-                                </li>
+                                        </li>
 
-                                <li class="list-inline-item">
+                                        <li class="list-inline-item">
 
-                                    <img alt="Avatar" class="table-avatar" src="/AdminLTE-3.0.4/dist/img/avatar3.png">
+                                            <img alt="Avatar" class="table-avatar" src="/AdminLTE-3.0.4/dist/img/avatar3.png">
 
-                                </li>
+                                        </li>
 
-                            </ul>
+                                    </ul>
 
-                        </td>
+                                </td>
 
-                        <td class="project_progress">
+                                <td class="project_progress">
 
-                            <div class="progress progress-sm">
+                                    <div class="progress progress-sm">
 
-                                <div class="progress-bar bg-green" role="progressbar" aria-volumenow="57" aria-volumemin="0" aria-volumemax="100" style="width: 57%">
+                                        <div class="progress-bar bg-green" role="progressbar" aria-volumenow="57" aria-volumemin="0" aria-volumemax="100" style="width: 57%">
 
-                                </div>
+                                        </div>
 
-                            </div>
+                                    </div>
 
-                            <small>
+                                    <small>
 
-                                57% Complete
+                                        57% Complete
 
-                            </small>
+                                    </small>
 
-                        </td>
+                                </td>
 
-                        <td class="project-state">
+                                <td class="project-state">
 
-                            <span class="badge badge-success">Success</span>
+                                    <span class="badge badge-success">Success</span>
 
-                        </td>
+                                </td>
 
-                        <td class="project-actions text-right">
+                                <td class="project-actions text-right">
 
-                            <a class="btn btn-primary btn-sm" href="#">
+                                  
 
-                                <i class="fas fa-folder">
+                                    <a class="btn btn-info btn-sm" href="#">
 
-                                </i>
+                                        <i class="fas fa-pencil-alt">
 
-                                Yazılar
+                                        </i>
 
-                            </a>
+                                        Düzenle
 
-                            <a class="btn btn-info btn-sm" href="#">
+                                    </a>
 
-                                <i class="fas fa-pencil-alt">
+                                    <a class="btn btn-danger btn-sm" href="#">
 
-                                </i>
+                                        <i class="fas fa-trash">
 
-                                Düzenle
+                                        </i>
 
-                            </a>
+                                        Sil
 
-                            <a class="btn btn-danger btn-sm" href="#">
+                                    </a>
 
-                                <i class="fas fa-trash">
+                                </td>
 
-                                </i>
-
-                                Sil
-
-                            </a>
-
-                        </td>
-
-                    </tr>
+                            </tr>
                         }
                     </tbody>
 
@@ -210,7 +203,25 @@
         <!-- /.card -->
 
     </section>
-
+<button class="btn btn-primary" data-toggle ="modal" data-target ="#Modal1">Yeni Kategori Ekle</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Yeni Kategori Ekleme Paneli</h2>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <label>Kategori Adı</label>
+                    <input type="text" name="#" class="form-control"/>
+                    <br/>
+                    <label>Kategori Açıklama</label>
+                    <input type="text" name="#" class="form-control"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
