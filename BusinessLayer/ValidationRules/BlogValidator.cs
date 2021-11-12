@@ -16,8 +16,7 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x => x.BlogContent).NotEmpty().WithMessage("Blog İçeriği Boş geçemezsiniz");
             RuleFor(x => x.BlogTitle).MinimumLength(3).WithMessage("Lütfen en az 3 karakter giriniz");
             RuleFor(x => x.BlogTitle).MaximumLength(500).WithMessage("Lütfen en fazla 500 karakter giriniz");
-         
-         
+
         }
     }
 }
