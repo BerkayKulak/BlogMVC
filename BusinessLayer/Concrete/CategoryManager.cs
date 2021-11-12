@@ -24,21 +24,21 @@ namespace BusinessLayer.Concrete
 
         public List<Category> GetAll()
         {
-            return repoCategory.List();
+            return _categoryDal.List();
         }
 
         public void DeleteCategoryBL(int id)
         {
-            Category category = repoCategory.Find(x => x.CategoryID == id);
-            category.CategoryStatus = false; 
-            repoCategory.Update(category);
+            Category category = _categoryDal.Find(x => x.CategoryID == id);
+            category.CategoryStatus = false;
+            _categoryDal.Update(category);
         }
 
         public void CategoryStatusTrueBL(int id)
         {
-            Category category = repoCategory.Find(x => x.CategoryID == id);
+            Category category = _categoryDal.Find(x => x.CategoryID == id);
             category.CategoryStatus = true;
-            repoCategory.Update(category);
+            _categoryDal.Update(category);
         }
 
         public List<Category> GetList()
