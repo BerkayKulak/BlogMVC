@@ -8,15 +8,19 @@
 <form class="form-group" method="post">
     @Html.Label("Yazar Adı Soyadı")
     @Html.TextBoxFor(x => x.AuthorName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x=>x.AuthorName)
     <br />
     @Html.Label("Yazar Resim Yolu")
     @Html.TextBoxFor(x => x.AuthorImage, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x=>x.AuthorImage)
     <br />
     @Html.Label("Yazar Yetenekler")
     @Html.TextBoxFor(x => x.AboutShort, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x=>x.AboutShort)
     <br />
     @Html.Label("Yazarın Statüsü")
     @Html.TextBoxFor(x => x.AuthorTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x=>x.AuthorTitle)
     <br />
     @Html.Label("Yazarın Maili")
     @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })

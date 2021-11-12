@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 
@@ -11,17 +12,14 @@ namespace BusinessLayer.Concrete
 {
     public class AuthorManager:IAuthorService
     {
+        private IAuthorDal _authorDal;
         private Repository<Author> repoauthor = new Repository<Author>();
 
-        public List<Author> GetAll()
+        public AuthorManager(IAuthorDal authorDal)
         {
-            return repoauthor.List();
+            _authorDal = authorDal;
         }
 
-        public void AddAuthorBL(Author author)
-        {
-            repoauthor.Insert(author);
-        }
 
         public Author FindAuthor(int id)
         {
@@ -44,12 +42,12 @@ namespace BusinessLayer.Concrete
 
         public List<Author> GetList()
         {
-            throw new NotImplementedException();
+            return _authorDal.List();
         }
 
         public void AuthorAdd(Author author)
         {
-            throw new NotImplementedException();
+            _authorDal.Insert(author);
         }
 
         public Author GetByID(int id)

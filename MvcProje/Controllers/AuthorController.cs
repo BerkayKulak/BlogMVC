@@ -4,8 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 
 namespace MvcProje.Controllers
 {
@@ -45,8 +47,22 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult AddAuthor(Author author)
         {
-            authorManager.AddAuthorBL(author);
-            return RedirectToAction("AuthorList");
+            AuthorValidator authorValidator = new AuthorValidator();
+            ValidationResult results = authorValidator.Validate(author);
+            if (results.IsValid)
+            {
+                authorManager.AuthorAdd(author);
+                return RedirectToAction("AuthorList");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View();
         }
 
         [HttpGet]
