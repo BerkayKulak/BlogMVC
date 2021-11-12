@@ -43,5 +43,19 @@ namespace MvcProje.Controllers
             cm.CategoryAddBL(p);
             return RedirectToAction("AdminCategoryList");
         }
+
+        [HttpGet]
+        public ActionResult CategoryEdit(int id)
+        {
+            Category category = cm.FindCategory(id);
+            return View(category);
+        }
+
+        [HttpPost]
+        public ActionResult CategoryEdit(Category p)
+        {
+            cm.EditCategory(p);
+            return RedirectToAction("AdminCategoryList");
+        }
     }
 }
