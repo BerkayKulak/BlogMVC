@@ -27,21 +27,21 @@ namespace DataAccessLayer.Concrete
             return _object.ToList();
         }
 
-        public int Insert(T p)
+        public void Insert(T p)
         {
             _object.Add(p);
-            return c.SaveChanges();
+             c.SaveChanges();
         }
 
-        public int Update(T p)
+        public void Update(T p)
         {
-            return c.SaveChanges();
+             c.SaveChanges();
         }
 
-        public int Delete(T p)
+        public void Delete(T p)
         {
             _object.Remove(p);
-            return c.SaveChanges();
+             c.SaveChanges();
         }
 
         public T GetByID(int id)

@@ -5,14 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls.WebParts;
 using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 
 namespace MvcProje.Controllers
 {
     public class CategoryController : Controller
     {
         
-        private CategoryManager cm = new CategoryManager();
+        private CategoryManager cm = new CategoryManager(new EfCategoryDal());
         public ActionResult Index()
         {
             var categoryvalues = cm.GetAll();
@@ -40,13 +43,28 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult AdminCategoryAdd(Category p)
         {
-            cm.CategoryAddBL(p);
-            return RedirectToAction("AdminCategoryList");
+            CategoryValidator categoryValidator = new CategoryValidator();
+            ValidationResult results = categoryValidator.Validate(p);
+            if (results.IsValid)
+            {
+                cm.CategoryAddBL(p);
+                return RedirectToAction("AdminCategoryList");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName,item.ErrorMessage);
+                }
+            }
+
+            return View();
         }
 
         [HttpGet]
         public ActionResult CategoryEdit(int id)
         {
+
             Category category = cm.FindCategory(id);
             return View(category);
         }
@@ -54,8 +72,23 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult CategoryEdit(Category p)
         {
-            cm.EditCategory(p);
-            return RedirectToAction("AdminCategoryList");
+            CategoryValidator categoryValidator = new CategoryValidator();
+            ValidationResult results = categoryValidator.Validate(p);
+            if (results.IsValid)
+            {
+                cm.EditCategory(p);
+                return RedirectToAction("AdminCategoryList");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View();
+          
         }
 
         public ActionResult CategoryDelete(int id)
