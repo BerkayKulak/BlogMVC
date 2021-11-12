@@ -17,11 +17,7 @@ namespace MvcProje.Controllers
         
         private CategoryManager cm = new CategoryManager(new EfCategoryDal());
 
-        public ActionResult Index()
-        {
-            var categoryvalues = cm.GetAll();
-            return View(categoryvalues);
-        }
+   
 
         [AllowAnonymous]
         public PartialViewResult BlogDetailsCategoryList()

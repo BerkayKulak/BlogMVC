@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 
 namespace MvcProje.Controllers
@@ -15,7 +16,7 @@ namespace MvcProje.Controllers
     {
         // GET: User
         private UserProfileManager userProfile = new UserProfileManager();
-        private BlogManager bm = new BlogManager();
+        private BlogManager bm = new BlogManager(new EfBlogDal());
         Context c = new Context();
         public ActionResult Index()
         {

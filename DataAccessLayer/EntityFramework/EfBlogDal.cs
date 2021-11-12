@@ -9,7 +9,7 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfAuthorDal : Repository<Author>, IAuthorDal
+    public class EfBlogDal : Repository<Blog>, IBlogDal
     {
     }
 }
