@@ -8,7 +8,7 @@
 }
 
 
-
+@{ string color = "";}
 <!DOCTYPE html>
 
 <html>
@@ -68,27 +68,30 @@
 
                             </th>
 
-                            <th style="width: 20%">
+                            <th style="width: 25%">
 
                                 Son Blog
 
                             </th>
 
-                            <th style="width: 20%">
+                            <th style="width: 15%">
 
                                 Kategori Bar
 
                             </th>
 
-                            <th style="width: 10%" class="text-center">
+                            <th style="width: 8%" class="text-center">
 
                                 Durum
 
                             </th>
 
-                            <th style="width: 30%">
+                            <th style="width: 25%" class="text-center">
+
                                 İşlemler
+
                             </th>
+
 
                         </tr>
 
@@ -98,6 +101,15 @@
 
                         @foreach (var item in Model)
                         {
+                            if (item.CategoryStatus == true)
+                            {
+                                color = "badge badge-success";
+                            }
+                            if (item.CategoryStatus == false)
+                            {
+                                color = "badge badge-warning";
+                            }
+
                             <tr>
 
                                 <td>
@@ -156,11 +168,15 @@
 
                                 </td>
 
+
+
                                 <td class="project-state">
 
-                                    <span class="badge badge-success">Success</span>
+                                    <span class="@color">@item.CategoryStatus</span>
 
                                 </td>
+
+                        
 
                                 <td class="project-actions text-right">
 
@@ -214,28 +230,28 @@
         <!-- /.card -->
 
     </section>
-<button class="btn btn-primary" data-toggle ="modal" data-target ="#Modal1">Yeni Kategori Ekle</button>
-<div class="modal" id="Modal1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Yeni Kategori Ekleme Paneli</h2>
-            </div>
-            <form method="post" action="/Category/AdminCategoryAdd/">
-                <div class="modal-body">
-                    <label>Kategori Adı</label>
-                    <input type="text" name="CategoryName" class="form-control"/>
-                    <br/>
-                    <label>Kategori Açıklama</label>
-                    <input type="text" name="CategoryDescription" class="form-control"/>
-                    <br/>
-                    <button class="btn btn-primary">Kaydet</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">Yeni Kategori Ekle</button>
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Yeni Kategori Ekleme Paneli</h2>
                 </div>
-              
-            </form>
+                <form method="post" action="/Category/AdminCategoryAdd/">
+                    <div class="modal-body">
+                        <label>Kategori Adı</label>
+                        <input type="text" name="CategoryName" class="form-control" />
+                        <br />
+                        <label>Kategori Açıklama</label>
+                        <input type="text" name="CategoryDescription" class="form-control" />
+                        <br />
+                        <button class="btn btn-primary">Kaydet</button>
+                    </div>
+
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </body>
 
 </html>
