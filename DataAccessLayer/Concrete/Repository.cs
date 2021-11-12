@@ -21,7 +21,6 @@ namespace DataAccessLayer.Concrete
             _object = c.Set<T>();
         }
 
-
         public List<T> List()
         {
             return _object.ToList();

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 
 namespace BusinessLayer.Concrete
 {
-    public class AuthorManager
+    public class AuthorManager:IAuthorService
     {
         private Repository<Author> repoauthor = new Repository<Author>();
 
@@ -41,5 +42,29 @@ namespace BusinessLayer.Concrete
             repoauthor.Update(author);
         }
 
+        public List<Author> GetList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AuthorAdd(Author author)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Author GetByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AuthorDelete(Author author)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AuthorUpdate(Author author)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
