@@ -44,5 +44,12 @@ namespace BusinessLayer.Concrete
             category.CategoryDescription = p.CategoryDescription;
             return repoCategory.Update(category);
         }
+
+        public int DeleteCategoryBL(int id)
+        {
+            Category category = repoCategory.Find(x => x.CategoryID == id);
+            category.CategoryStatus = false;
+            return repoCategory.Update(category);
+        }
     }
 }
