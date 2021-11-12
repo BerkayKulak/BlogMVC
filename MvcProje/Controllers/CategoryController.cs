@@ -63,5 +63,11 @@ namespace MvcProje.Controllers
             cm.DeleteCategoryBL(id);
             return RedirectToAction("AdminCategoryList");
         }
+
+        public ActionResult CategoryStatusTrue(int id)
+        {
+            cm.CategoryStatusTrueBL(id);
+            return RedirectToAction("AdminCategoryList");
+        }
     }
 }
