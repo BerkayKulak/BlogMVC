@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls.WebParts;
 using BusinessLayer.Concrete;
+using EntityLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
@@ -28,6 +29,19 @@ namespace MvcProje.Controllers
         {
             var categorylist = cm.GetAll();
             return View(categorylist);
+        }
+
+        [HttpGet]
+        public ActionResult AdminCategoryAdd()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AdminCategoryAdd(Category p)
+        {
+            cm.CategoryAddBL(p);
+            return RedirectToAction("AdminCategoryList");
         }
     }
 }

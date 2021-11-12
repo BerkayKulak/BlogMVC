@@ -210,14 +210,17 @@
             <div class="modal-header">
                 <h2 class="modal-title">Yeni Kategori Ekleme Paneli</h2>
             </div>
-            <form>
+            <form method="post" action="/Category/AdminCategoryAdd/">
                 <div class="modal-body">
                     <label>Kategori Adı</label>
-                    <input type="text" name="#" class="form-control"/>
+                    <input type="text" name="CategoryName" class="form-control"/>
                     <br/>
                     <label>Kategori Açıklama</label>
-                    <input type="text" name="#" class="form-control"/>
+                    <input type="text" name="CategoryDescription" class="form-control"/>
+                    <br/>
+                    <button class="btn btn-primary">Kaydet</button>
                 </div>
+              
             </form>
         </div>
     </div>

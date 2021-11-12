@@ -17,6 +17,14 @@ namespace BusinessLayer.Concrete
         }
 
 
+        public int CategoryAddBL(Category p)
+        {
+            if (p.CategoryName == "" || p.CategoryDescription == "" || p.CategoryName.Length <= 3 || p.CategoryDescription.Length <= 3)
+            {
+                return -1;
+            }
 
+            return repoCategory.Insert(p);
+        }
     }
 }
