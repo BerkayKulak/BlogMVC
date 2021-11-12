@@ -38,7 +38,7 @@ namespace BusinessLayer.Concrete
             author.Mail = p.Mail;
             author.Password = p.Password;
             author.PhoneNumber = p.PhoneNumber;
-             repoauthor.Update(author);
+            repoauthor.Update(author);
         }
 
     }
