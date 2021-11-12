@@ -51,5 +51,12 @@ namespace BusinessLayer.Concrete
             category.CategoryStatus = false;
             return repoCategory.Update(category);
         }
+
+        public int CategoryStatusTrueBL(int id)
+        {
+            Category category = repoCategory.Find(x => x.CategoryID == id);
+            category.CategoryStatus = true;
+            return repoCategory.Update(category);
+        }
     }
 }
