@@ -33,14 +33,6 @@ namespace BusinessLayer.Concrete
             return repoblog.List(x => x.CategoryID == id);
         }
 
-        public void BlogAddBL(Blog p)
-        {
-            
-
-             repoblog.Insert(p);
-        }
-
-
       
 
         public List<Blog> GetList()
@@ -50,7 +42,7 @@ namespace BusinessLayer.Concrete
 
         public void BlogAdd(Blog blog)
         {
-            throw new System.NotImplementedException();
+            _blogDal.Insert(blog);
         }
 
         public Blog GetByID(int id)
