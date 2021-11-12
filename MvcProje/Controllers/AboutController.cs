@@ -14,17 +14,17 @@ namespace MvcProje.Controllers
     public class AboutController : Controller
     {
         // GET: About
-        AboutManager abm = new AboutManager();
+        AboutManager abm = new AboutManager(new EfAboutDal());
         public ActionResult Index()
         {
-            var aboutcontent = abm.GetAll();
+            var aboutcontent = abm.GetList();
             return View(aboutcontent);
         }
 
         public PartialViewResult Footer()
         {
             
-            var aboutContentList = abm.GetAll();
+            var aboutContentList = abm.GetList();
             return PartialView(aboutContentList);
         }
 
@@ -38,13 +38,13 @@ namespace MvcProje.Controllers
         [HttpGet]
         public ActionResult UpdateAboutList()
         {
-            var aboutList = abm.GetAll();
+            var aboutList = abm.GetList();
             return View(aboutList);
         }
         [HttpPost]
         public ActionResult UpdateAbout(About p)
         {
-            abm.UpdateAboutBM(p);
+            abm.AboutUpdate(p);
             return RedirectToAction("UpdateAboutList");
         }
     }
