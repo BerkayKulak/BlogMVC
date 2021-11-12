@@ -209,7 +209,7 @@ namespace MvcProje.Controllers
 
         public ActionResult GetCommentByBlog(int id)
         {
-            CommentManager cm = new CommentManager();
+            CommentManager cm = new CommentManager(new EfCommentDal());
             var commentlist = cm.CommentByBlog(id);
             return View(commentlist);
         }
