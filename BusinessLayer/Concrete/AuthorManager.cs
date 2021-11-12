@@ -17,14 +17,9 @@ namespace BusinessLayer.Concrete
             return repoauthor.List();
         }
 
-        public int AddAuthorBL(Author author)
+        public void AddAuthorBL(Author author)
         {
-            if (author.AuthorName == "" || author.AboutShort == "" || author.AuthorTitle == "")
-            {
-                return -1;
-            }
-
-            return repoauthor.Insert(author);
+            repoauthor.Insert(author);
         }
 
         public Author FindAuthor(int id)
@@ -32,7 +27,7 @@ namespace BusinessLayer.Concrete
             return repoauthor.Find(x => x.AuthorID == id);
         }
 
-        public int EditAuthor(Author p)
+        public void EditAuthor(Author p)
         {
             Author author = repoauthor.Find(x => x.AuthorID == p.AuthorID);
             author.AboutShort = p.AboutShort;
@@ -43,7 +38,7 @@ namespace BusinessLayer.Concrete
             author.Mail = p.Mail;
             author.Password = p.Password;
             author.PhoneNumber = p.PhoneNumber;
-            return repoauthor.Update(author);
+             repoauthor.Update(author);
         }
 
     }

@@ -29,20 +29,17 @@ namespace BusinessLayer.Concrete
             return repoblog.List(x => x.CategoryID == id);
         }
 
-        public int BlogAddBL(Blog p)
+        public void BlogAddBL(Blog p)
         {
-            if (p.BlogTitle == "" || p.BlogImage == "" || p.BlogTitle.Length <= 5 || p.BlogContent.Length <= 10)
-            {
-                return -1;
-            }
+            
 
-            return repoblog.Insert(p);
+             repoblog.Insert(p);
         }
 
-        public int DeleteBlogBL(int p)
+        public void DeleteBlogBL(int p)
         {
             Blog blog = repoblog.Find(x => x.BlogID == p);
-            return repoblog.Delete(blog);
+             repoblog.Delete(blog);
         }
 
         public Blog FindBlog(int id)
@@ -50,7 +47,7 @@ namespace BusinessLayer.Concrete
             return repoblog.Find(x => x.BlogID == id);
         }
 
-        public int UpdateBlog(Blog p)
+        public void UpdateBlog(Blog p)
         {
             Blog blog = repoblog.Find(x => x.BlogID == p.BlogID);
             blog.BlogTitle = p.BlogTitle;
@@ -59,7 +56,7 @@ namespace BusinessLayer.Concrete
             blog.BlogImage = p.BlogImage;
             blog.CategoryID = p.CategoryID;
             blog.AuthorID = p.AuthorID;
-            return repoblog.Update(blog);
+             repoblog.Update(blog);
         }
 
     }
