@@ -26,6 +26,11 @@ namespace BusinessLayer.Concrete
             return _authorDal.List();
         }
 
+        public void TAdd(Author t)
+        {
+            throw new NotImplementedException();
+        }
+
         public void AuthorAdd(Author author)
         {
             _authorDal.Insert(author);
@@ -34,6 +39,16 @@ namespace BusinessLayer.Concrete
         public Author GetByID(int id)
         {
             return _authorDal.GetByID(id);
+        }
+
+        public void TDelete(Author t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TUpdate(Author t)
+        {
+            throw new NotImplementedException();
         }
 
         public void AuthorDelete(Author author)
