@@ -20,17 +20,6 @@ namespace BusinessLayer.Concrete
             _aboutDal = aboutDal;
         }
 
-    
-        public void UpdateAboutBM(About p)
-        {
-            About about = repoabout.Find(x => x.AboutID == p.AboutID);
-            about.AboutContent1 = p.AboutContent1;
-            about.AboutContent2 = p.AboutContent2;
-            about.AboutImage1 = p.AboutImage1;
-            about.AboutImage2 = p.AboutImage2;
-            about.AboutID = p.AboutID;
-             repoabout.Update(about);
-        }
 
         public List<About> GetList()
         {
@@ -54,7 +43,7 @@ namespace BusinessLayer.Concrete
 
         public void AboutUpdate(About about)
         {
-            throw new NotImplementedException();
+            _aboutDal.Update(about);
         }
     }
 }
