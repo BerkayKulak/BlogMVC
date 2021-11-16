@@ -58,6 +58,7 @@
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\ICommentDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
+    <Compile Include="Abstract\IMailDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repository.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfCommentDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
+    <Compile Include="EntityFramework\EfMailDal.cs" />
     <Compile Include="Migrations\202111040800549_mig1.cs" />
     <Compile Include="Migrations\202111040800549_mig1.designer.cs">
       <DependentUpon>202111040800549_mig1.cs</DependentUpon>

@@ -40,6 +40,11 @@ namespace BusinessLayer.Concrete
             return _blogDal.List();
         }
 
+        public void TAdd(Blog t)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void BlogAdd(Blog blog)
         {
             _blogDal.Insert(blog);
@@ -48,6 +53,16 @@ namespace BusinessLayer.Concrete
         public Blog GetByID(int id)
         {
             return _blogDal.GetByID(id);
+        }
+
+        public void TDelete(Blog t)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void TUpdate(Blog t)
+        {
+            throw new System.NotImplementedException();
         }
 
         public void BlogDelete(Blog blog)
