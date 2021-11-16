@@ -51,6 +51,7 @@
     <Compile Include="Abstract\ICommentService.cs" />
     <Compile Include="Abstract\IContactService.cs" />
     <Compile Include="Abstract\IGenericService.cs" />
+    <Compile Include="Abstract\IMailService.cs" />
     <Compile Include="Concrete\AboutManager.cs" />
     <Compile Include="Concrete\AuthorManager.cs" />
     <Compile Include="Concrete\BlogManager.cs" />
