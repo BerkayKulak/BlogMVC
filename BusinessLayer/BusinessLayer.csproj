@@ -64,6 +64,7 @@
     <Compile Include="ValidationRules\AuthorValidator.cs" />
     <Compile Include="ValidationRules\BlogValidator.cs" />
     <Compile Include="ValidationRules\CategoryValidator.cs" />
+    <Compile Include="ValidationRules\ContactValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
