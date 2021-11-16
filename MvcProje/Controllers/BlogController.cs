@@ -166,7 +166,7 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult AddNewBlog(Blog b)
         {
-            bm.BlogAdd(b);
+            bm.TAdd(b);
             return RedirectToAction("AdminBlogList");
         }
 
@@ -174,7 +174,7 @@ namespace MvcProje.Controllers
         public ActionResult DeleteBlog(int id)
         {
             Blog blog = bm.GetByID(id);
-            bm.BlogDelete(blog);
+            bm.TDelete(blog);
             return RedirectToAction("AdminBlogList");
         }
 
@@ -204,7 +204,7 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult UpdateBlog(Blog p)
         {
-            bm.BlogUpdate(p);
+            bm.TUpdate(p);
             return RedirectToAction("AdminBlogList");
         }
 

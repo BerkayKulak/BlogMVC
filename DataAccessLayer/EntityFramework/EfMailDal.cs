@@ -9,7 +9,7 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.EntityFramework
 {
-   public class EfMailDal : Repository<SubscribeMail>, IMail
+   public class EfMailDal : Repository<SubscribeMail>, IMailDal
     {
     }
 }

@@ -48,7 +48,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Author t)
         {
-            throw new NotImplementedException();
+            _authorDal.Update(t);
         }
 
         public void AuthorDelete(Author author)
@@ -56,9 +56,6 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public void AuthorUpdate(Author author)
-        {
-            _authorDal.Update(author);
-        }
+   
     }
 }
