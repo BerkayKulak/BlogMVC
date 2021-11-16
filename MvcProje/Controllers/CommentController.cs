@@ -34,7 +34,7 @@ namespace MvcProje.Controllers
         public PartialViewResult LeaveComment(Comment c)
         {
             c.CommentStatus = true;
-            cm.CommentAdd(c);
+            cm.TAdd(c);
             return PartialView();
         }
 

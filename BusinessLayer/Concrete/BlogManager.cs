@@ -9,7 +9,6 @@ namespace BusinessLayer.Concrete
 {
     public class BlogManager:IBlogService
     {
-        private Repository<Blog> repoblog = new Repository<Blog>();
 
         private IBlogDal _blogDal;
 
@@ -20,17 +19,17 @@ namespace BusinessLayer.Concrete
 
         public List<Blog> GetBlogById(int id)
         {
-            return repoblog.List(x => x.BlogID == id);
+            return _blogDal.List(x => x.BlogID == id);
         }
 
         public List<Blog> GetBlogByAuthor(int id)
         {
-            return repoblog.List(x => x.AuthorID == id);
+            return _blogDal.List(x => x.AuthorID == id);
         }
 
         public List<Blog> GetBlogByCategory(int id)
         {
-            return repoblog.List(x => x.CategoryID == id);
+            return _blogDal.List(x => x.CategoryID == id);
         }
 
       
@@ -42,13 +41,9 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Blog t)
         {
-            throw new System.NotImplementedException();
+            _blogDal.Insert(t);
         }
 
-        public void BlogAdd(Blog blog)
-        {
-            _blogDal.Insert(blog);
-        }
 
         public Blog GetByID(int id)
         {
@@ -57,22 +52,14 @@ namespace BusinessLayer.Concrete
 
         public void TDelete(Blog t)
         {
-            throw new System.NotImplementedException();
+            _blogDal.Delete(t);
         }
 
         public void TUpdate(Blog t)
         {
-            throw new System.NotImplementedException();
+            _blogDal.Update(t);
         }
 
-        public void BlogDelete(Blog blog)
-        {
-            _blogDal.Delete(blog);
-        }
-
-        public void BlogUpdate(Blog blog)
-        {
-            _blogDal.Update(blog);
-        }
+  
     }
 }
