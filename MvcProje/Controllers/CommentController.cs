@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls.WebParts;
 using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 
 namespace MvcProje.Controllers
@@ -12,7 +13,7 @@ namespace MvcProje.Controllers
     public class CommentController : Controller
     {
         
-        CommentManager cm = new CommentManager();
+        CommentManager cm = new CommentManager(new EfCommentDal());
         [AllowAnonymous]
         public PartialViewResult CommentList(int id)
         {

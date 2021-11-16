@@ -15,6 +15,7 @@ namespace MvcProje.Controllers
 {
     public class BlogController : Controller
     {
+        CommentManager cm = new CommentManager(new EfCommentDal());
         private BlogManager bm = new BlogManager(new EfBlogDal());
         Context c = new Context();
         [AllowAnonymous]
@@ -209,7 +210,7 @@ namespace MvcProje.Controllers
 
         public ActionResult GetCommentByBlog(int id)
         {
-            CommentManager cm = new CommentManager(new EfCommentDal());
+          
             var commentlist = cm.CommentByBlog(id);
             return View(commentlist);
         }
