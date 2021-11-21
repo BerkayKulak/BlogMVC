@@ -28,13 +28,10 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Author t)
         {
-            throw new NotImplementedException();
+            _authorDal.Insert(t);
         }
 
-        public void AuthorAdd(Author author)
-        {
-            _authorDal.Insert(author);
-        }
+    
 
         public Author GetByID(int id)
         {

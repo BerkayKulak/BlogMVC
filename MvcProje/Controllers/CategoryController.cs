@@ -22,13 +22,13 @@ namespace MvcProje.Controllers
         [AllowAnonymous]
         public PartialViewResult BlogDetailsCategoryList()
         {
-            var categoryvalues = cm.GetAll();
+            var categoryvalues = cm.GetList();
             return PartialView(categoryvalues);
         }
 
         public ActionResult AdminCategoryList()
         {
-            var categorylist = cm.GetAll();
+            var categorylist = cm.GetList();
             return View(categorylist);
         }
 
@@ -45,7 +45,7 @@ namespace MvcProje.Controllers
             ValidationResult results = categoryValidator.Validate(p);
             if (results.IsValid)
             {
-                cm.CategoryAdd(p);
+                cm.TAdd(p);
                 return RedirectToAction("AdminCategoryList");
             }
             else
@@ -74,7 +74,7 @@ namespace MvcProje.Controllers
             ValidationResult results = categoryValidator.Validate(p);
             if (results.IsValid)
             {
-                cm.CategoryUpdate(p);
+                cm.TUpdate(p);
                 return RedirectToAction("AdminCategoryList");
             }
             else

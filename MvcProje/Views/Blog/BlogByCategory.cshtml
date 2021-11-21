@@ -4,6 +4,17 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
+<link rel="stylesheet" href="~/miniblog/fonts/icomoon/style.css">
+<link rel="stylesheet" href="~/miniblog/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/miniblog/css/magnific-popup.css">
+<link rel="stylesheet" href="~/miniblog/css/jquery-ui.css">
+<link rel="stylesheet" href="~/miniblog/css/owl.carousel.min.css">
+<link rel="stylesheet" href="~/miniblog/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="~/miniblog/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="~/miniblog/fonts/flaticon/font/flaticon.css">
+<link rel="stylesheet" href="~/miniblog/css/aos.css">
+<link rel="stylesheet" href="~/miniblog/css/style.css">
+
 <div class="py-5 bg-light">
     <div class="container">
         <div class="row">
@@ -19,26 +30,27 @@
 <div class="site-section bg-white">
     <div class="container">
         <div class="row">
-            @foreach(var item in Model){
-            <div class="col-lg-4 mb-4">
-                <div class="entry2">
-                    <a href="/Blog/BlogDetails/@item.BlogID"><img src="@item.BlogImage" alt="Image" style="height: 250px" class="img-fluid rounded"></a>
-                    <div class="excerpt">
-                        <span class="post-category text-white bg-secondary mb-3">@item.Category.CategoryName</span>
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 mb-4">
+                    <div class="entry2">
+                        <a href="/Blog/BlogDetails/@item.BlogID"><img src="@item.BlogImage" alt="Image" style="height: 250px" class="img-fluid rounded"></a>
+                        <div class="excerpt">
+                            <span class="post-category text-white bg-secondary mb-3">@item.Category.CategoryName</span>
 
-                        <h2><a href="/Blog/BlogDetails/@item.BlogID">@item.BlogTitle</a></h2>
-                        <div class="post-meta align-items-center text-left clearfix">
-                            <figure class="author-figure mb-0 mr-3 float-left"><img src="@item.Author.AuthorImage" alt="Image" class="img-fluid"></figure>
-                            <span class="d-inline-block mt-1"><a href="#">@item.Author.AuthorName</a></span>
-                            <span>&nbsp;-&nbsp;  @(((DateTime)item.BlogDate).ToString("dd-MM-yyyy"))</span>
+                            <h2><a href="/Blog/BlogDetails/@item.BlogID">@item.BlogTitle</a></h2>
+                            <div class="post-meta align-items-center text-left clearfix">
+                                <figure class="author-figure mb-0 mr-3 float-left"><img src="@item.Author.AuthorImage" alt="Image" class="img-fluid"></figure>
+                                <span class="d-inline-block mt-1"><a href="#">@item.Author.AuthorName</a></span>
+                                <span>&nbsp;-&nbsp;  @(((DateTime)item.BlogDate).ToString("dd-MM-yyyy"))</span>
+                            </div>
+                            <p>@item.BlogContent.Substring(0, item.BlogContent.Substring(0, 100).LastIndexOf(" "))...</p>
+                            <p><a href="#">Read More</a></p>
                         </div>
-                        <p>@item.BlogContent.Substring(0, item.BlogContent.Substring(0, 100).LastIndexOf(" "))...</p>
-                        <p><a href="#">Read More</a></p>
                     </div>
                 </div>
-            </div>
             }
         </div>
     </div>
 </div>
-@Html.Action("Footer","About")
+@Html.Action("AddMail", "MailSubscribe")

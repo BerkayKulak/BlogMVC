@@ -3,7 +3,16 @@
     ViewBag.Title = "BlogDetails";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
-
+<link rel="stylesheet" href="~/miniblog/fonts/icomoon/style.css">
+<link rel="stylesheet" href="~/miniblog/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/miniblog/css/magnific-popup.css">
+<link rel="stylesheet" href="~/miniblog/css/jquery-ui.css">
+<link rel="stylesheet" href="~/miniblog/css/owl.carousel.min.css">
+<link rel="stylesheet" href="~/miniblog/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="~/miniblog/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="~/miniblog/fonts/flaticon/font/flaticon.css">
+<link rel="stylesheet" href="~/miniblog/css/aos.css">
+<link rel="stylesheet" href="~/miniblog/css/style.css">
 
 @Html.Action("BlogCover", "Blog")
 
@@ -25,5 +34,5 @@
 </section>
 @Html.Action("OtherFeaturedPosts", "Blog")
 @Html.Action("AddMail", "MailSubscribe")
-@Html.Action("Footer", "About")
+@*@Html.Action("Footer", "About")*@
 

@@ -23,6 +23,13 @@ namespace MvcProje.Controllers
             return View();
         }
 
+        public ActionResult DeleteBlog(int id)
+        {
+            Blog blog = bm.GetByID(id);
+            bm.TDelete(blog);
+            return RedirectToAction("Index");
+        }
+
         public PartialViewResult Partial1(string p)
         {
             p = (string)Session["Mail"];
