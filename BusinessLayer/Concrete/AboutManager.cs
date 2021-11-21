@@ -43,12 +43,9 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(About t)
         {
-            throw new NotImplementedException();
+            _aboutDal.Update(t);
         }
 
-        public void AboutUpdate(About about)
-        {
-            _aboutDal.Update(about);
-        }
+   
     }
 }

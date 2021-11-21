@@ -12,7 +12,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700|Playfair+Display:400,700,900" rel="stylesheet">
 
-    <link rel="stylesheet" href="~/miniblog/fonts/icomoon/style.css">
+    @*<link rel="stylesheet" href="~/miniblog/fonts/icomoon/style.css">
     <link rel="stylesheet" href="~/miniblog/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/miniblog/css/magnific-popup.css">
     <link rel="stylesheet" href="~/miniblog/css/jquery-ui.css">
@@ -21,7 +21,20 @@
     <link rel="stylesheet" href="~/miniblog/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="~/miniblog/fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="~/miniblog/css/aos.css">
-    <link rel="stylesheet" href="~/miniblog/css/style.css">
+    <link rel="stylesheet" href="~/miniblog/css/style.css">*@
+
+    <link href="~/24-news/css/media_query.css" rel="stylesheet" type="text/css" />
+    <link href="~/24-news/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="~/24-news/css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="~/24-news/css/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="~/24-news/css/owl.theme.default.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap CSS -->
+    <link href="~/24-news/css/style_1.css" rel="stylesheet" type="text/css" />
+    <!-- Modernizr JS -->
+    <script src="~/24-news/js/modernizr-3.5.0.min.js"></script>
 </head>
 <body>
 
@@ -35,47 +48,50 @@
             </div>
             <div class="site-mobile-menu-body"></div>
         </div>
-
-        <header class="site-navbar" role="banner">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-
-                    <div class="col-12 search-form-wrap js-search-form">
-                        <form method="get" action="#">
-                            <input type="text" id="s" class="form-control" placeholder="Search...">
-                            <button class="search-btn" type="submit"><span class="icon-search"></span></button>
-                        </form>
+     
+        <div class="container-fluid">
+            <div class="container padding_786">
+                <nav class="navbar navbar-toggleable-md navbar-light ">
+                    <button class="navbar-toggler navbar-toggler-right mt-3" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="images/logo.png" alt="img" class="mobile_logo_width" /></a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/Blog/Index">Ana Sayfa <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Blog/BlogByCategory/2/">Teknoloji <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Blog/BlogByCategory/6/">Kültür & Sanat <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Blog/BlogByCategory/4/">Seyahat <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Blog/BlogByCategory/3/">Film & Dizi <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/About/Index/">Hakkımızda <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Contact/SendMessage/">İletişim <span class="sr-only">(current)</span></a>
+                            </li>
+                        </ul>
                     </div>
-
-                    <div class="col-4 site-logo">
-                        <a href="/Blog/Index" class="text-black h2 mb-0">Mini Blog</a>
-                    </div>
-
-                    <div class="col-8 text-right">
-                        <nav class="site-navigation" role="navigation">
-                            <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
-                                <li><a href="/Blog/Index">Ana Sayfa</a></li>
-                                <li><a href="/Blog/BlogByCategory/2/">Teknoloji</a></li>
-                                <li><a href="/Blog/BlogByCategory/6/">Kültür & Sanat</a></li>
-                                <li><a href="/Blog/BlogByCategory/4/">Seyahat</a></li>
-                                <li><a href="/Blog/BlogByCategory/3/">Film & Dizi</a></li>
-                                <li><a href="/About/Index/">Hakkımızda</a></li>
-                                <li><a href="/Contact/SendMessage/">İletişim</a></li>
-                                <li class="d-none d-lg-inline-block"><a href="#" class="js-search-toggle"><span class="icon-search"></span></a></li>
-                            </ul>
-                        </nav>
-                        <a href="#" class="site-menu-toggle js-menu-toggle text-black d-inline-block d-lg-none"><span class="icon-menu h3"></span></a>
-                    </div>
-                </div>
-
+                </nav>
             </div>
-        </header>
+        </div>
 
-        
+
         @RenderBody()
     </div>
 
-    <script src="~/miniblog/js/jquery-3.3.1.min.js"></script>
+    @*<script src="~/miniblog/js/jquery-3.3.1.min.js"></script>
     <script src="~/miniblog/js/jquery-migrate-3.0.1.min.js"></script>
     <script src="~/miniblog/js/jquery-ui.js"></script>
     <script src="~/miniblog/js/popper.min.js"></script>
@@ -87,7 +103,21 @@
     <script src="~/miniblog/js/bootstrap-datepicker.min.js"></script>
     <script src="~/miniblog/js/aos.js"></script>
 
-    <script src="js/main.js"></script>
+    <script src="~/24-news/js/main.js"></script>*@
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="~/24-news/js/owl.carousel.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+    <!-- Waypoints -->
+    <script src="~/24-news/js/jquery.waypoints.min.js"></script>
+    <!-- Main -->
+    <script src="~/24-news/js/main.js"></script>
 
 
 </body>

@@ -14,13 +14,8 @@
     <meta charset="UTF-8" />
     <meta name="keywords"
           content="Report Login Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <!-- //Meta tag Keywords -->
-    <link href="//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <!--/Style-CSS -->
-    <link rel="stylesheet" href="~/Report-Login-Free/css/style.css" type="text/css" media="all" />
-    <!--//Style-CSS -->
-
-    <link rel="stylesheet" href="~/Report-Login-Free/css/font-awesome.min.css" type="text/css" media="all">
+    <link href="~/24-news/css/StyleSheet3.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -31,38 +26,46 @@
         <h1>Mvc Blog Yazar Girişi</h1>
         <div class="container">
             <!-- /form -->
-            <div class="workinghny-form-grid">
-                <div class="main-hotair">
-                    <div class="content-wthree">
-                        <h2>Log In Paneli</h2>
-                        @using (Html.BeginForm("AuthorLogin", "Login", FormMethod.Post))
-                        {
-                            <input type="text" class="text" name="Mail" placeholder="Mailinizi giriniz" required="" autofocus>
-                            <input type="password" class="password" name="Password" placeholder="Şifreyi giriniz" required="" autofocus>
-                            <button class="btn" type="submit">Giriş Yap</button>
-                        }
 
-                        <p class="account">Şifremi Unuttum<a href="#signup">Şifre Gönder</a></p>
-                        <p class="account">Admin Girişi<a href="/Login/AdminLogin/">Giriş Sayfası</a></p>
-                    </div>
-                    <div class="w3l_form align-self">
-                        <div class="left_grid_info">
-                            <img src="~/Report-Login-Free/images/1.png" alt="" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
+            <div id="login-button">
+                <img src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png">
+                </img>
             </div>
-            <!-- //form -->
+            <div id="container">
+                <h1>Log In</h1>
+
+
+                <form method="post">
+                    <input type="email" name="Mail" id="mail" placeholder="E-mail">
+                    <input type="password" name="Password" id="password" placeholder="Şifrenizi giriniz">
+                    <a onclick="redirect(this,'/Login/AuthorLogin')" href="#">Log in</a>
+                    <div id="remember-container">
+                        <input type="checkbox" id="checkbox-2-1" class="checkbox" checked="checked" />
+                        <span id="remember">Remember me</span>
+                        <span id="forgotten">Forgotten password</span>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Forgotten Password Container -->
+            <div id="forgotten-container">
+                <h1>Forgotten</h1>
+                <span class="close-btn">
+                    <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"></img>
+                </span>
+
+                <form>
+                    <input type="email" name="email" placeholder="E-mail">
+                    <a href="#" class="orange-btn">Get new password</a>
+                </form>
+            </div>
         </div>
-        <!-- copyright-->
-        <div class="copyright text-center">
-            <p class="copy-footer-29">
-                © 2021 Report Login Form. Tüm Hakları Saklıdır | Design by <a href="https://w3layouts.com">W3layouts</a>
-            </p>
-        </div>
+        <!-- //form -->
         <!-- //copyright-->
     </section>
     <!-- //form section start -->
+    <script src="~/24-news/js/JavaScript.js"></script>
 </body>
 
 </html>
+

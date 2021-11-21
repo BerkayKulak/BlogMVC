@@ -1,53 +1,88 @@
-﻿@model IEnumerable<EntityLayer.Concrete.About>
+﻿
 
-<div class="site-footer">
-    <div class="container">
-        <div class="row mb-5">
-            @foreach (var x in Model)
-            {
-                <div class="col-md-4">
-                    <h3 class="footer-heading mb-4">Hakkımızda</h3>
-                    <p>@x.AboutContent1</p>
+<div class="container-fluid fh5co_footer_bg pb-3">
+    <div class="container animate-box">
+        <div class="row">
+            <div class="col-12 spdp_right py-5"><img src="https://img.icons8.com/external-wanicon-flat-wanicon/64/000000/external-blog-digital-content-wanicon-flat-wanicon.png" /></div>
+            <div class="clearfix"></div>
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="footer_main_title py-3"> Hakkımızda</div>
+                <div class="footer_sub_about pb-3">
+                    Bu Proje 2021 yılında Berkay Kulak tarafından Mvc5 ile  katmanlı mimaride adım adım proje geliştirme kapsamında gerçekleştirilmiştir. Projede amacımız teknoloji, yazılım, sanat, seyahat gibi konularda postlar paylaşıp sizleri bilgilendirmektir.
                 </div>
-            }
-            <div class="col-md-3 ml-auto">
-                <!-- <h3 class="footer-heading mb-4">Navigation</h3> -->
-                <ul class="list-unstyled float-left mr-5">
-                    <li><a href="/About/Index/">Hakkımızda</a></li>
-                    <li><a href="/Contact/SendMessage/">İletişim</a></li>
-                    <li><a href="/Blog/Index/">Ana Sayfa</a></li>
-                    <li><a href="/Login/AuthorLogin/">Yazar Girişi</a></li>
-                </ul>
-                <ul class="list-unstyled float-left">
-                    <li><a href="/Blog/BlogByCategory/4">Seyahat</a></li>
-                    <li><a href="/Blog/BlogByCategory/1">Yazılım</a></li>
-                    <li><a href="/Blog/BlogByCategory/2">Teknoloji</a></li>
-                    <li><a href="/Blog/BlogByCategory/3">Film & Dizi</a></li>
+                <div class="footer_mediya_icon">
+                    <div class="text-center d-inline-block">
+                        <a class="fh5co_display_table_footer">
+                            <div class="fh5co_verticle_middle"><i class="fa fa-linkedin"></i></div>
+                        </a>
+                    </div>
+                    <div class="text-center d-inline-block">
+                        <a class="fh5co_display_table_footer">
+                            <div class="fh5co_verticle_middle"><i class="fa fa-google-plus"></i></div>
+                        </a>
+                    </div>
+                    <div class="text-center d-inline-block">
+                        <a class="fh5co_display_table_footer">
+                            <div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div>
+                        </a>
+                    </div>
+                    <div class="text-center d-inline-block">
+                        <a class="fh5co_display_table_footer">
+                            <div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-3 col-lg-2">
+                <div class="footer_main_title py-3"> Kategoriler</div>
+                <ul class="footer_menu">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Blog/Index">Ana Sayfa <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/Blog/BlogByCategory/2/">Teknoloji <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/Blog/BlogByCategory/6/">Kültür & Sanat <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/Blog/BlogByCategory/4/">Seyahat <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/Blog/BlogByCategory/3/">Film & Dizi <span class="sr-only">(current)</span></a>
+                    </li>
+
                 </ul>
             </div>
-            <div class="col-md-4">
-
-
-                <div>
-                    <h3 class="footer-heading mb-4">Sosyal Medya Hesaplarımız</h3>
-                    <p>
-                        <a href="#"><span class="icon-facebook pt-2 pr-2 pb-2 pl-0"></span></a>
-                        <a href="#"><span class="icon-twitter p-2"></span></a>
-                        <a href="#"><span class="icon-instagram p-2"></span></a>
-                        <a href="#"><span class="icon-rss p-2"></span></a>
-                        <a href="#"><span class="icon-envelope p-2"></span></a>
-                    </p>
-                </div>
+            <div class="col-12 col-md-5 col-lg-3 position_footer_relative">
+                <div class="footer_main_title py-3"> En Çok Görüntülenen Bloglar</div>
+                <div class="footer_makes_sub_font"> Dec 31, 2016</div>
+                <a href="#" class="footer_post pb-4"> SpaceX' in Başarısı </a>
+                <div class="footer_makes_sub_font"> Dec 31, 2016</div>
+                <a href="#" class="footer_post pb-4">Çin Seddi </a>
+                <div class="footer_makes_sub_font"> Dec 31, 2016</div>
+                <a href="#" class="footer_post pb-4"> Yüzüklerin Efendisi </a>
+            </div>
+            <div class="col-12 col-md-12 col-lg-4 ">
+                <div class="footer_main_title py-3"> En Son Düzenlenen Bloglar</div>
+                <a href="#" class="footer_img_post_6"><img src="https://static.dw.com/image/44688473_101.jpg" alt="img" /></a>
+                <a href="#" class="footer_img_post_6"><img src="https://www.mobil13.com/wp-content/uploads/2020/12/1482232904-fellowship.jpg" alt="img" /></a>
+                <a href="#" class="footer_img_post_6"><img src="https://www.manzara.gen.tr/w1/manzara-ve-do%C4%9Fa.jpg" alt="img" /></a>
+                <a href="#" class="footer_img_post_6"><img src="https://www.teknolama.com/wp-content/uploads/2020/05/teknoloji-nedir-teknolama-min-1280x720.jpg" alt="img" /></a>
+                <a href="#" class="footer_img_post_6"><img src="https://www.kocaeli.bel.tr/webfiles/userfiles/images/2020/2020_Ocak/2020_01_08/20200108_konser1.jpg" alt="img" /></a>
+                <a href="#" class="footer_img_post_6"><img src="https://coin.hwp.com.tr/wp-content/uploads/2021/02/spx.jpg" alt="img" /></a>
+                <a href="#" class="footer_img_post_6"><img src="https://listelist.com/wp-content/uploads/2019/09/cin-seddi.jpg" alt="img" /></a>
+                <a href="#" class="footer_img_post_6"><img src="https://blog.flypgs.com/wp-content/uploads/2018/11/mona-lisa-tablosu.jpg" alt="img" /></a>
+                <a href="#" class="footer_img_post_6"><img src="https://static.dw.com/image/44688473_101.jpg" alt="img" /></a>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 text-center">
-                <p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> Tüm Hakları Sakldır | Bu Proje Teması <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
+        <div class="row justify-content-center pt-2 pb-4">
+            <div class="col-12 col-md-8 col-lg-7 ">
+                <div class="input-group">
+                    <span class="input-group-addon fh5co_footer_text_box" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                    <input type="text" class="form-control fh5co_footer_text_box" placeholder="Mail Adresinizi Girin" name="Mail" aria-describedby="basic-addon1">
+                    <a href="#" class="input-group-addon fh5co_footer_subcribe" id="basic-addon12"> <i class="fa fa-paper-plane-o"></i>&nbsp;&nbsp;Subscribe</a>
+                </div>
             </div>
         </div>
     </div>

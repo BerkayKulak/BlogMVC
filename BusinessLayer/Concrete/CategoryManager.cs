@@ -22,10 +22,6 @@ namespace BusinessLayer.Concrete
             _categoryDal = categoryDal;
         }
 
-        public List<Category> GetAll()
-        {
-            return _categoryDal.List();
-        }
 
         public void DeleteCategoryBL(int id)
         {
@@ -48,12 +44,7 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Category t)
         {
-            throw new NotImplementedException();
-        }
-
-        public void CategoryAdd(Category category)
-        {
-            _categoryDal.Insert(category);
+            _categoryDal.Insert(t);
         }
 
         public Category GetByID(int id)
@@ -63,22 +54,15 @@ namespace BusinessLayer.Concrete
 
         public void TDelete(Category t)
         {
-            throw new NotImplementedException();
+            _categoryDal.Delete(t);
         }
 
         public void TUpdate(Category t)
         {
-            throw new NotImplementedException();
+            _categoryDal.Update(t);
         }
 
-        public void CategoryDelete(Category category)
-        {
-            _categoryDal.Delete(category);
-        }
+     
 
-        public void CategoryUpdate(Category category)
-        {
-            _categoryDal.Update(category);
-        }
     }
 }
